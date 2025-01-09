@@ -13,7 +13,7 @@ query = "liver function"
 now = time.time()
 # Execute the query against the API
 # seg-expl this is just testing
-results = pubmed.query(query, max_results=500)
+results = pubmed.query(query, max_results=5)
 art = []
 after = time.time()
 # Loop over the retrieved articles

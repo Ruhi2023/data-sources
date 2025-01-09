@@ -1,0 +1,3339 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!-->
+
+<html class="no-js" lang="en-EN" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<!--<![endif]-->
+
+  <head>
+
+  <!-- TC-2195 ID5 Implementierung -->
+  <script src="https://cdn.id5-sync.com/api/1.0/id5-api.js"></script>
+
+<script>
+
+    var id5id;
+    var id5eid;
+    var id5linktype;
+
+    window.setTimeout(function(){
+
+    var id5Callback = function (id5Status) {
+        // do something with the ID5 ID
+        id5id = id5Status.getUserId();
+        id5eid = id5Status.getUserIdAsEid();
+        id5linktype = id5Status.getLinkType();
+
+        //console.log(id5id);
+        //console.log(id5eid);
+        //console.log(id5linktype);
+
+        window._adftrack = Array.isArray(window._adftrack) ? window._adftrack : (window._adftrack ? [window._adftrack] : []);
+        window._adftrack.push({
+            HttpHost: 'track.adform.net',
+            pm: 2389978,
+            divider: encodeURIComponent('|'),
+            pagename: encodeURIComponent('Thieme'),
+            //gdpr: 1, // GDPR Consent given 1/0
+            //gdpr_consent: '', // GDPR Consent String Value Macro should be put here, if not filled out automatically by the CMP
+            eids: [{
+                'source': 'id5-sync.com',
+                'uids': [
+                    {
+                        "id": id5id,
+                        "atype": 1,
+                        "ext": {
+                            "linkType": id5linktype,
+                            "abTestingControlGroup": false
+                        }
+                    }
+                ]
+                // Extended identifier setup end
+            }],
+            order : {
+                sv1: '',
+                sv2: '',
+                sv3: 'hpv-associated sinonasal squamous cell carcinoma',
+                sv4: 'journal of neurological surgery reports',
+                sv5: '',
+                sv6: '',
+                sv7: id5id, // please dont edit this line
+                sv8: id5linktype // please dont edit this line
+            }
+        });
+
+        var adformtag = adformtag || [];
+        adformtag.push(setEIDs);
+
+        (function () { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://s2.adform.net/banners/scripts/st/trackpoint-async.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();
+
+        function setEIDs() {
+            var eids = [{
+                'source': 'id5-sync.com',
+                'uids': [
+                    {
+                        "id": id5id,
+                        "atype": 1,
+                        "ext": {
+                            "linkType": id5linktype,
+                            "abTestingControlGroup": false
+                        }
+                    }
+                ]
+            }];
+            adformtag.setExtendedIDs(eids);
+        };
+
+    };
+
+    //ID5.debug = true;
+    var id5Status = ID5.init({ partnerId: 988, refreshInSeconds: 3600, pd: "OD1odHRwcyUzQSUyRiUyRnd3dy50aGllbWUtY29ubmVjdC5kZSUyRnByb2R1Y3RzJTJGZWpvdXJuYWxzJTJGYWJzdHJhY3QlMkYxMC4xMDU1JTJGYS0yNDk2LTUyNDAmMTA9NDkuNDMuMTMwLjUyJjEyPU1vemlsbGElMkY1LjArJTI4V2luZG93cytOVCs2LjElMjkrQXBwbGVXZWJLaXQlMkY1MzcuMzYrJTI4S0hUTUwlMkMrbGlrZStHZWNrbyUyOStDaHJvbWUlMkY0MS4wLjIyMjguMCtTYWZhcmklMkY1MzcuMzY=" }).onAvailable(id5Callback, 10000);
+
+//        var id5Status = ID5.init({
+//            partnerId: 988, // modify with your own partnerId
+//            refreshInSeconds: 3600,
+//            pd: "OD1odHRwcyUzQSUyRiUyRnd3dy50aGllbWUtY29ubmVjdC5kZSUyRnByb2R1Y3RzJTJGZWpvdXJuYWxzJTJGYWJzdHJhY3QlMkYxMC4xMDU1JTJGYS0yNDk2LTUyNDAmMTA9NDkuNDMuMTMwLjUyJjEyPU1vemlsbGElMkY1LjArJTI4V2luZG93cytOVCs2LjElMjkrQXBwbGVXZWJLaXQlMkY1MzcuMzYrJTI4S0hUTUwlMkMrbGlrZStHZWNrbyUyOStDaHJvbWUlMkY0MS4wLjIyMjguMCtTYWZhcmklMkY1MzcuMzY=", // this is the section to put hashed hard signals - check the guideline.
+//        });
+
+        }, 1000);
+</script>
+
+<!-- Adform Tracking Code BEGIN -->
+
+<!-- Adform Tracking Code END -->
+
+
+
+  
+      <script src="https://cdn.thieme.de/cookie-consent_TCF/dist/tcfutility.min.js" type="text/javascript"></script>
+
+      <!-- OneTrust Cookie-Einwilligungshinweis – Anfang für www.thieme-connect.de -->
+      <script type="text/javascript" src="https://cdn.cookielaw.org/consent/d45bc1dd-2cdd-4045-9bc3-061bb3b25dbb/OtAutoBlock.js"></script>
+      <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="d45bc1dd-2cdd-4045-9bc3-061bb3b25dbb"></script>
+      <script type="text/javascript">
+        /* Nach Änderung der Zustimmung Seite neu laden */
+        function OptanonWrapper(e) {
+          OneTrust.OnConsentChanged(function() {
+            window.location.reload();
+          });
+        }
+        /* function OptanonWrapper() { } */
+      </script>
+      <!-- OneTrust-Cookie-Einwilligungshinweis – Ende für www.thieme-connect.de -->
+    
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PMWN2TQ');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Start Piwik PRO Tag Manager code -->
+    <!--script type="text/javascript">
+    (function(window, document, script, dataLayer, id) {
+    function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString()}document.cookie=a+"="+b+d+"; path=/"}var isStgDebug=(window.location.href.match("stg_debug")||window.document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?365:-1);
+    window[dataLayer]=window[dataLayer]||[],window[dataLayer].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName(script)[0],tags=document.createElement(script),dl="dataLayer"!=dataLayer?"?dataLayer="+dataLayer:"";tags.async=!0,tags.src="//tag.aumago.com/d79e0982-d118-4c32-bf33-db3a291dbf63.js"+dl,isStgDebug&&(tags.src=tags.src+"?stg_debug"),scripts.parentNode.insertBefore(tags,scripts);
+    })(window, document, 'script', 'dataLayer', 'd79e0982-d118-4c32-bf33-db3a291dbf63');
+    </script-->
+    <noscript><iframe src="//tag.aumago.com/d79e0982-d118-4c32-bf33-db3a291dbf63/noscript.html" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Piwik PRO Tag Manager code -->
+
+    <meta name="viewport" content=""/>
+    <meta charset="utf-8"/>
+    <meta node="03"/>
+
+    <meta name="description" content="Thieme E-Books &amp; E-Journals"/>
+
+    <meta name="format-detection" content="telephone=no"/>
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+
+    
+    
+      <meta name="twitter:card" content="summary_large_image"/><meta property="twitter:title" content="HPV-associated Sinonasal Squamous Cell Carcinoma" /><meta property="twitter:site" content="@ThiemeConnect" /><meta property="twitter:image" content="https://www.thieme-connect.de/products/static/assets/desktop/img/Twitter_Summary_Default.jpg" />
+    
+
+    <title>Thieme E-Journals - Journal of Neurological Surgery Reports / Abstract</title>
+
+	<link rel="shortcut icon" href="/products/assets/favicon-e6861aa09fc6a3a946cb99117c7bbb6d.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/products/assets/css/style-c4c2f2cb846c6f97434eab9021b95b45.css" type="text/css"/>
+    <link rel="stylesheet" href="/products/assets/style-changes-e1a19d88caf8f40fb3751a53eff580ba.css" type="text/css"/>
+    <link rel="stylesheet" href="/products/assets/todo-marker-ccf30c6d95b56ca3d0f1d359619ebfa6.css" type="text/css"/>
+    <link rel="stylesheet" href="/products/assets/dark-bottom-dc8bcb8668797957a5a4cb83a4a02f16.css" type="text/css"/>
+    <link rel="stylesheet" href="/products/assets/css/all.min-9217594d9c115167a1ae704d5c8e49f0.css" type="text/css"/>
+    <link rel="stylesheet" href="/products/assets/facetsWidget-089cc834a3ccaefcaedd50b92844c435.css" type="text/css"/>
+    <script type="text/javascript" src="/products/assets/libs/jquery-3.7.1.min-ecee19a383efd22bd54981b27926f724.js" ></script>
+    <script type="text/javascript" src="/products/assets/libs/jquery-ui-1.13.2.min-420ad961fc6b8b370f1626592817b9f7.js" ></script>
+    <script type="text/javascript" src="/products/assets/browser-0dfb93a20cd2c1005028985f8b717b78.js" ></script>
+    <script type="text/javascript" src="/products/assets/libs/modernizr-2.0.6.min-6ea2093737335d9243d37880279e1bca.js" ></script>
+    <script type="text/javascript" src="/products/assets/js/plugins-4e60cc754d04fb5f811ad13176538668.js" ></script>
+    <script type="text/javascript" src="/products/assets/js/script-617030364506b75a92fc3a00a49423bd.js" ></script>
+    <script type="text/javascript" src="/products/assets/js/tablet.slideinmenu-751be01aad2c02aefad271ddd174d0b1.js" ></script>
+    <script type="text/javascript" src="/products/assets/tooltip-10f19c131f09a88f0056410b04ef5223.js" ></script>
+    <script type="text/javascript" src="/products/assets/commons-aa4b995a09a64935d02de28acdf73502.js" ></script>
+    <script type="text/javascript" src="/products/assets/script-changes-972a33908c51934e76741677ab1f7bce.js" ></script>
+    <script type="text/javascript" src="/products/assets/cookieconsent-7b8defe1dfad48394a313e1a58223a28.js" ></script>
+    <script type="text/javascript" src="/products/assets/paginator-d6dc1b0f4b0612746dd756940885c539.js" ></script>
+    <!-- Aufruf fetchResultsList aus paginator.js ist bei Home anders als bei Suchergebnissen implementiert -->
+    
+    
+      <script type="text/javascript" src="/products/assets/searchResults-1d3950a762a99dc7f4749ded1473024f.js" ></script>
+    
+    <script type="text/javascript" src="/products/assets/bookToc-9ea33d9db4207293b333a5145d357fc3.js" ></script>
+
+  <!-- TC-1884 Altmetrics Badge -->
+  <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+
+  <script type="text/javascript">
+
+    (function() {
+
+      window._adexc = window._adexc || [];
+
+      // custom KV example
+      window._adexc.push([
+        '/506/3014/',
+        'ut',
+        '_kv',
+        {
+          'IpLoggedIn':'false',
+          'LoggedIn':'false',
+          'isFulltext':'false',
+          'JournalDoi': '00000182',
+        }
+      ]);
+
+      var axd = document.createElement('script'); axd.type = 'text/javascript'; axd.async = 1;
+      axd.src = "https://dmp.theadex.com/d/506/3014/s/adex.js";
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(axd, s);
+    })();
+
+  </script>
+
+  <!-- TC-1735 MathML -->
+  
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+  
+
+    
+  
+
+  <meta name="page" content="abstract"/>
+  <meta name="layout" content="main"/>
+
+  
+
+
+
+
+  
+    
+    <meta name="prism:publicationName" content="Journal of Neurological Surgery Reports" />
+  
+
+    
+    <meta name="prism:issn" content="2193-6358" />
+  
+
+    
+    <meta name="prism:eissn" content="2193-6366" />
+  
+
+    
+    <meta name="prism:distributor" content="Georg Thieme Verlag KG" />
+  
+
+  
+  
+
+    
+    <meta name="prism:copyright" content="Georg Thieme Verlag KG Oswald-Hesse-Straße 50, 70469 Stuttgart, Germany" />
+    
+
+    
+    <meta name="prism:doi" content="10.1055/a-2496-5240" />
+  
+
+    
+    <meta name="prism:academicField" content="Case Report" />
+  
+
+   
+
+   
+
+  
+    <meta name="prism:person" content="Rex H. Lee" />
+  
+    <meta name="prism:person" content="Annemieke van Zante" />
+  
+    <meta name="prism:person" content="Ezequiel Goldschmidt" />
+  
+    <meta name="prism:person" content="Ivan H. El-Sayed" />
+  
+
+   
+    <meta name="prism:copyrightYear" content="2025" />
+  
+
+   
+    <meta name="prism:copyrighEntity" content="The Author(s)." />
+  
+
+  
+    <meta name="prism:publicationDate" content="2025/01/07" />
+  
+
+  
+    <meta name="prism:creationDate" content="2024/12/05" />
+  
+
+  
+    <meta name="prism:coverDate" content="2025/01" />
+  
+
+  
+    <meta name="prism:volume" content="86" />
+  
+
+  
+    
+      <meta name="prism:issueIdentifier" content="01" />
+    
+  
+
+    
+    <meta name="prism:startingPage" content="e1" />
+  
+
+    
+    <meta name="prism:endingPage" content="e3" />
+    
+    
+    
+  
+    
+    <meta name="prism:url" content="http://www.thieme-connect.de/products/ejournals/html/10.1055/a-2496-5240" />
+  
+
+
+  
+
+
+
+
+
+
+
+  
+    
+    <meta name="citation_language" content="en" />
+  
+
+    
+   <meta name="citation_journal_title" content="Journal of Neurological Surgery Reports" />
+  
+  
+    
+   <meta name="citation_journal_abbrev" content="J Neurol Surg Rep" />
+  
+  
+  
+    <meta name="citation_issn" content="2193-6358" />
+  
+
+  
+    <meta name="citation_issn" content="2193-6366" />
+  
+  
+  
+    <meta name="citation_publisher" content="Georg Thieme Verlag KG" />
+  
+
+  
+    <meta name="citation_doi" content="10.1055/a-2496-5240" />
+  
+
+  
+    <meta name="citation_title" content="HPV-associated Sinonasal Squamous Cell Carcinoma" />
+  
+
+  
+    
+      <meta name="citation_author" content="Rex H. Lee" />
+      
+        <meta name="citation_author_institution" content="Department of Otolaryngology - Head and Neck Surgery, University of California San Francisco, San Francisco, California, United States" />
+      
+      
+      
+        <meta name="citation_author_orcid" content="0000-0003-4111-9975" />
+      
+    
+      <meta name="citation_author" content="Annemieke van Zante" />
+      
+        <meta name="citation_author_institution" content="Department of Pathology, University of California San Francisco, San Francisco, California, United States" />
+      
+      
+      
+    
+      <meta name="citation_author" content="Ezequiel Goldschmidt" />
+      
+        <meta name="citation_author_institution" content="Department of Neurological Surgery, University of California San Francisco, San Francisco, California, United States" />
+      
+      
+      
+    
+      <meta name="citation_author" content="Ivan H. El-Sayed" />
+      
+        <meta name="citation_author_institution" content="Department of Otolaryngology - Head and Neck Surgery, University of California San Francisco, San Francisco, California, United States" />
+      
+      
+        <meta name="citation_author_email" content="ivan.el-sayed@ucsf.edu" />
+      
+      
+    
+  
+
+  
+    <meta name="citation_online_date" content="2025/01/07" />
+  
+
+  
+    <meta name="citation_publication_date" content="2025/01" />
+  
+
+  
+    <meta name="citation_volume" content="86" />
+  
+
+  
+    
+      <meta name="citation_issue" content="01" />
+    
+  
+
+  
+    <meta name="citation_firstpage" content="e1" />
+  
+
+  
+    <meta name="citation_lastpage" content="e3" />
+  
+
+  
+    <meta name="citation_fulltext_world_readable" content="" />
+  
+
+  
+
+  
+    
+    <meta name="citation_pdf_url" content="http://www.thieme-connect.de/products/ejournals/pdf/10.1055/a-2496-5240.pdf" />
+  
+
+  
+    
+    <meta name="citation_fulltext_html_url" content="http://www.thieme-connect.de/products/ejournals/html/10.1055/a-2496-5240" />
+    
+      
+      <meta name="citation_xml_url" content="http://www.thieme-connect.de/products/ejournals/xml/10.1055/a-2496-5240.xml" format_fulltext="jats1.3" />
+    
+  
+  
+  <meta name="citation_abstract_html_url" content="http://www.thieme-connect.de/DOI/DOI?10.1055/a-2496-5240" />
+  
+    
+    <meta name="citation_license" content="[CC BY-NC-ND, CC BY-NC-ND 4.0]" />
+  
+
+  
+    <meta name="citation_abstract" content="&lt;p&gt;Human papillomavirus (HPV)-associated sinonasal squamous cell carcinoma (SNSCC) (HPV+ SNSCC) is a recently recognized entity that accounts for up to one-third of SNSCC. Although at present these cancers are not routinely tested for HPV, the incidence is increasing and HPV+ SNSCC is associated with superior survival outcomes compared with HPV− SNSCC. Here, we present the case of a patient with HPV+ SNSCC treated with endoscopic resection followed by postoperative radiation and review the literature summarizing epidemiology and management of this disease, with emphasis on the importance of HPV testing in SNSCC.&lt;/p&gt;
+ " />
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <meta name="citation_reference" content="citation_author=R Thawani; citation_author=M S Kim; citation_author=A Arastu; citation_publication_date=2023; citation_title=The contemporary management of cancers of the sinonasal tract in adults; citation_firstpage=72; citation_lastpage=112; citation_issue=01; citation_journal_title=CA Cancer J Clin; citation_volume=73; " />
+  
+    <meta name="citation_reference" content="citation_author=K Fukuda; citation_author=A Shibata; citation_publication_date=1990; citation_title=Exposure-response relationships between woodworking, smoking or passive smoking, and squamous cell neoplasms of the maxillary sinus; citation_firstpage=165; citation_lastpage=168; citation_issue=02; citation_journal_title=Cancer Causes Control; citation_volume=1; " />
+  
+    <meta name="citation_reference" content="citation_author=K JW Chang Sing Pang; citation_author=T Mur; citation_author=L Collins; citation_author=S R Rao; citation_author=D L Faden; citation_publication_date=2020; citation_title=Human papillomavirus in sinonasal squamous cell carcinoma: a systematic review and meta-analysis; citation_firstpage=45; citation_issue=01; citation_journal_title=Cancers (Basel); citation_volume=13; " />
+  
+    <meta name="citation_reference" content="citation_author=J R Oliver; citation_author=S M Lieberman; citation_author=M M Tam; citation_publication_date=2020; citation_title=Human papillomavirus and survival of patients with sinonasal squamous cell carcinoma; citation_firstpage=1413; citation_lastpage=1423; citation_issue=07; citation_journal_title=Cancer; citation_volume=126; " />
+  
+    <meta name="citation_reference" content="citation_author=S P Ramkumar; citation_author=M C Simpson; citation_author=E Adjei Boakye; citation_publication_date=2023; citation_title=High-risk human papillomavirus 16/18 associated with improved survival in sinonasal squamous cell carcinoma; citation_firstpage=1372; citation_lastpage=1383; citation_issue=09; citation_journal_title=Cancer; citation_volume=129; " />
+  
+    <meta name="citation_reference" content="citation_author=N Chowdhury; citation_author=S Alvi; citation_author=K Kimura; citation_publication_date=2017; citation_title=Outcomes of HPV-related nasal squamous cell carcinoma; citation_firstpage=1600; citation_lastpage=1603; citation_issue=07; citation_journal_title=Laryngoscope; citation_volume=127; " />
+  
+    <meta name="citation_reference" content="citation_author=N R London; citation_author=M J Windon; citation_author=A Amanian; citation_publication_date=2023; citation_title=Evaluation of the incidence of human papillomavirus-associated squamous cell carcinoma of the sinonasal tract among US adults; citation_firstpage=e2255971; citation_issue=02; citation_journal_title=JAMA Netw Open; citation_volume=6; " />
+  
+    <meta name="citation_reference" content="citation_author=C Fakhry; citation_author=C Lacchetti; citation_author=L M Rooper; citation_publication_date=2018; citation_title=Human papillomavirus testing in head and neck carcinomas: ASCO clinical practice guideline endorsement of the College of American Pathologists guideline; citation_firstpage=3152; citation_lastpage=3161; citation_issue=31; citation_journal_title=J Clin Oncol; citation_volume=36; " />
+  
+    <meta name="citation_reference" content="citation_author=J M Boland; citation_author=E D McPhail; citation_author=J J García; citation_author=J E Lewis; citation_author=D J Schembri-Wismayer; citation_publication_date=2012; citation_title=Detection of human papilloma virus and p16 expression in high-grade adenoid cystic carcinoma of the head and neck; citation_firstpage=529; citation_lastpage=536; citation_issue=04; citation_journal_title=Mod Pathol; citation_volume=25; " />
+  
+    <meta name="citation_reference" content="citation_author=C H Chung; citation_author=Q Zhang; citation_author=C S Kong; citation_publication_date=2014; citation_title=p16 protein expression and human papillomavirus status as prognostic biomarkers of nonoropharyngeal head and neck squamous cell carcinoma; citation_firstpage=3930; citation_lastpage=3938; citation_issue=35; citation_journal_title=J Clin Oncol; citation_volume=32; " />
+  
+    <meta name="citation_reference" content="citation_author=A Amanian; citation_author=M Ishii; citation_author=C Fakhry; citation_author=N R London; citation_publication_date=2024; citation_title=Epidemiologic trends in human papillomavirus-associated sinonasal squamous cell carcinoma; citation_firstpage=609; citation_lastpage=618; citation_issue=07; citation_journal_title=JAMA Otolaryngol Head Neck Surg; citation_volume=150; " />
+  
+    <meta name="citation_reference" content="citation_author=M Ferrari; citation_author=S Taboni; citation_author=A LC Carobbio; citation_publication_date=2021; citation_title=Sinonasal squamous cell carcinoma, a narrative reappraisal of the current evidence; citation_firstpage=2835; citation_issue=11; citation_journal_title=Cancers (Basel); citation_volume=13; " />
+  
+    <meta name="citation_reference" content="" />
+  
+    <meta name="citation_reference" content="citation_author=K L Melder; citation_author=M Geltzeiler; citation_publication_date=2023; citation_title=Induction chemotherapy for locoregionally advanced sinonasal squamous cell carcinoma and sinonasal undifferentiated carcinoma: a comprehensive review; citation_firstpage=3798; citation_issue=15; citation_journal_title=Cancers (Basel); citation_volume=15; " />
+  
+    <meta name="citation_reference" content="citation_author=A Sharma; citation_author=A L Tang; citation_author=V Takiar; citation_author=T M Wise-Draper; citation_author=S M Langevin; citation_publication_date=2021; citation_title=Human papillomavirus and survival of sinonasal squamous cell carcinoma patients: a systematic review and meta-analysis; citation_firstpage=3677; citation_issue=15; citation_journal_title=Cancers (Basel); citation_volume=13; " />
+  
+   
+
+  
+
+  
+    
+    <meta name="dc:medium" content="Journal of Neurological Surgery Reports" />
+  
+
+  
+    <meta name="dc:language" content="en" />
+  
+
+  
+    <meta name="dc:rights" content="Georg Thieme Verlag KG Oswald-Hesse-Straße 50, 70469 Stuttgart, Germany" />
+  
+
+  
+    <meta name="dc:publisher" content="Georg Thieme Verlag KG" />
+  
+
+  
+    <meta name="dc:identifier" content="10.1055/a-2496-5240" />
+  
+
+  
+    <meta name="dc:subject" content="Case Report" />
+  
+
+  
+    <meta name="dc:title" content="HPV-associated Sinonasal Squamous Cell Carcinoma" />
+  
+
+  
+
+  
+    <meta name="dc:creator" content="Rex H. Lee" />
+  
+    <meta name="dc:creator" content="Annemieke van Zante" />
+  
+    <meta name="dc:creator" content="Ezequiel Goldschmidt" />
+  
+    <meta name="dc:creator" content="Ivan H. El-Sayed" />
+  
+
+    
+    <meta name="dc:rightsHolder" content="The Author(s)." />
+  
+
+   
+    <meta name="dc:license" content="[CC BY-NC-ND, CC BY-NC-ND 4.0]" />
+  
+
+  
+    <meta name="dc:date" content="2025/01/07" />
+  
+
+  
+    <meta name="dcterms:created" content="2024/12/05" />
+  
+
+  
+    <meta name="dcterms:issued" content="2025/01" />
+  
+
+  
+    <meta name="dc:accessRights" content="open-access" />
+  
+
+  
+    <meta name="dcterms:abstract" content="Human papillomavirus (HPV)-associated sinonasal squamous cell carcinoma (SNSCC) (HPV+ SNSCC) is a recently recognized entity that accounts for up to one-third of SNSCC. Although at present these cancers are not routinely tested for HPV, the incidence is increasing and HPV+ SNSCC is associated with superior survival outcomes compared with HPV− SNSCC. Here, we present the case of a patient with HPV+ SNSCC treated with endoscopic resection followed by postoperative radiation and review the literature summarizing epidemiology and management of this disease, with emphasis on the importance of HPV testing in SNSCC.
+ " />
+  
+
+  
+    <meta name="dc:description" content="" />
+  
+
+  
+    <meta name="dc:format" content="XML"/>
+    
+    
+    <meta name="dc:relation" content="http://www.thieme-connect.de/products/ejournals/html/10.1055/a-2496-5240" />
+  
+
+  
+    <meta name="dc:format" content="PDF"/>
+    
+    <meta name="dc:relation" content="http://www.thieme-connect.de/products/ejournals/pdf/10.1055/a-2496-5240.pdf" />
+  
+
+  
+
+
+  
+  
+    
+  
+  <meta name="dc:relation" content="https://www.thieme-connect.com/media/jnlsr/202501/10-1055-a-2496-5240-i24oct0069-1.jpg"/>
+
+  
+  
+    
+  
+  <meta name="dc:relation" content="https://www.thieme-connect.com/media/jnlsr/202501/10-1055-a-2496-5240-i24oct0069-2.jpg"/>
+
+  
+  
+    
+  
+  <meta name="dc:relation" content="https://www.thieme-connect.com/media/jnlsr/202501/10-1055-a-2496-5240-i24oct0069-3.jpg"/>
+
+  
+  
+  <meta name="dc:relation" content=""/>
+
+
+
+  <meta name="article_crawling_links_url" content="http://www.thieme-connect.de/products/ejournals/article-xml/10.1055/a-2496-5240" article-type="scientific" publication_type="issue">
+
+    
+  </head>
+
+  
+
+  
+  
+
+  
+
+  
+  
+    
+    
+  
+
+  <body id="body" class="    ">
+    
+    
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMWN2TQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- TC-2122 -->
+    
+    
+      
+    
+    <div id="journalname" style="display: none">journal of neurological surgery reports</div>
+
+    <!-- TC-2220 -->
+    
+    
+    <div id="themeid" style="display: none"></div>
+
+
+    <div id="application">
+
+      <!-- start general/_header.gsp -->
+<header id="pageHeader">
+  <div id="topHeaderBar">
+    <ul id="metaNavigation" role="navigation">
+      
+      
+        <li class="langSwitch2German">
+          <a href="/products/ejournals/abstract/10.1055/a-2496-5240?id=&amp;lang=de" class="">
+            DE
+          </a>
+        </li>
+        <li class="langSwitch2English">
+          <span>EN</span>
+        </li>
+      
+      <li>
+        <a href="/products/all/home.html">
+          Home
+        </a>
+      </li>
+      <li class="hasChildren" id="hasChildren">
+        <span>Products</span>
+        <ul class="linkList dropMenu">
+          <li id="journalsLink">
+            <a href="/products/ejournals/journals">
+              Journals
+            </a>
+          </li>
+          <li id="booksLink">
+            <a href="/products/ebooks/books">
+              Books
+            </a>
+          </li>
+          <li id="seriesLink">
+            <a href="/products/ebooks/series">
+              Book Series
+            </a>
+          </li>
+        </ul>
+        <div class="shadowMask"></div>
+      </li>
+      <li class="hasChildren">
+        <span>Service</span>
+        <ul class="linkList dropMenu">
+          <li id="libraryservice">
+            <a href="/products/libraryservice">
+              Library Service
+            </a>
+          </li>
+        </ul>
+        <div class="shadowMask"></div>
+      </li>
+      <li>
+        <a href="/products/all/help">Help</a>
+      </li>
+      <li>
+        <a href="/products/all/contact">
+          Contact
+        </a>
+      </li>
+      <li>
+        <a href="https://www.thieme.de/en/thieme-connect/home-3939.htm" target="_blank">
+          Portal
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="middleHeaderBar">
+    <a id="logo" href="/products/all/home.html" ></a>
+    <div id="siteTitle">
+      
+        Journal of Neurological Surgery Reports
+      
+    </div>
+    
+<div id="searchBar">
+  <form action="/products/all/search" method="get" name="headerSearch" id="headerSearch" >
+    <input type="text" name="query" placeholder="Search" class="searchField" value="">
+    <div id="searchFilter" class="pseudoSelect searchFilter">
+      <div id="searchFilter_currentSelection" class="currentSelection">
+        <div class="label">
+          Full-text search
+        </div>
+      </div>
+      <ul class="selectList dropMenu">
+        <li><a id="fulltext" href="#">Full-text search</a></li>
+        <li><a id="author" href="#">Author Search</a></li>
+        <li><a id="title" href="#">Title Search</a></li>
+        <li><a id="doi" href="#">DOI Search</a></li>
+        <li><a id="metadata" href="#">Metadata Search</a></li>
+      </ul>
+    </div>
+    <input type="hidden" name="radius" id="navSearchRadius" value="fulltext">
+    <input type="hidden" name="option" value="AND">
+    <input type="hidden" name="clearSavedProfileSearch" value="true">
+    <input type="submit" class="searchButton">
+  </form>
+</div>
+
+  </div>
+  <div id="bottomHeaderBar">
+    <!-- start general/_navHeader.gsp -->
+
+
+  
+
+
+
+  <ul id="headerNavigation">
+    <li id="pdlink" class="tab"></li>
+    <li id="pdlinkAuthors" class="tab"></li>
+    <li id="pdlinkAbos" class="tab"></li>
+    <li id="pdoptionalTab1" class="tab"></li>
+    <li id="pdoptionalTab2" class="tab"></li>
+  
+    
+    
+    
+      <li class="tab">
+        <a href="javascript:;">
+          Journal
+        </a>
+        <ul class="dropMenu linkList">
+          
+            
+          
+            
+              <li class="tab">
+                <a href="https://lp.thieme.de/journals/details.php?issn=2193-6366">More About This Journal</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="tab">
+                <a href="https://lp.thieme.de/open-access-files/203/editorial_board.pdf">Editorial Board</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+      <li class="tab">
+        <a href="javascript:;">
+          Authors
+        </a>
+        <ul class="dropMenu linkList">
+          
+            
+          
+            
+              <li class="tab">
+                <a href="https://lp.thieme.de/open-access-files/203/author_instructions.pdf">Instructions for Authors</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="tab">
+                <a href="http://mc.manuscriptcentral.com/jnls-report">Manuscript Submission</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+      
+    
+    
+    
+      <li class="tab">
+        
+        
+        
+          
+        
+          
+            <a href="javascript:;">Funding agreements</a>
+            
+          
+        
+          
+        
+          
+        
+        <ul class="dropMenu linkList">
+          
+            
+          
+            
+          
+            
+          
+            
+              <li class="tab">
+                <a href="http://www.sherpa.ac.uk/juliet/">SHERPA/JULIET</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+    
+    
+      <li class="tab">
+        
+        
+        
+          
+        
+          
+            <a href="javascript:;">Social Media</a>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <ul class="dropMenu linkList">
+          
+            
+          
+            
+          
+            
+          
+            
+              <li class="tab">
+                <a href="https://www.instagram.com/skullbasevideos/">Instagram</a>
+              </li>
+            
+          
+            
+          
+            
+              <li class="tab">
+                <a href="https://twitter.com/JNLSReports">X</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+    
+  </ul>
+
+<!-- end general/_navHeader.gsp -->
+
+    <ul id="userFunctions">
+
+      <li id="userAccount">
+        
+        
+        
+        
+        
+        
+          
+          
+            <span class="headerFunctionTitle">
+              Not Logged In
+            </span>
+            <span class="headerFunctionOptions"> 
+              <a href="#" function="login">Login</a>
+            </span>
+            <div id="userMenu">
+              <ul class="dropMenu" id="headerAccountForm">
+                <li>
+                  
+                    <form action="https://profile.thieme.de/HTML/sso/THIEME/login.htm" method="post" name="headerLogin">
+                      <input type="hidden" name="action" value="login">
+                      <input type="hidden" name="rdeLocaleAttr" value="en">
+                      <input type="hidden" name="hook_url" value="https://www.thieme-connect.de/products/ejournals/abstract/10.1055/a-2496-5240">
+                      <div class="formLine">
+                        <label for="username">Username or e-mail address:</label> 
+                        <input class="textfield" type="text" name="username">
+                      </div>
+                      <div class="formLine">
+                        <label>Password:</label>
+                        <input class="textfield" type="password" name="password">
+                      </div>
+                      <div class="submitLine">
+                        <input class="button submitButton" type="submit" name="submitButton" value="Login">
+                      </div>
+                      <a href="https://profile.thieme.de/HTML/sso/THIEME/thieme_forgotten_access_data.htm?hook_url=https://www.thieme-connect.de/products/ejournals/abstract/10.1055/a-2496-5240&amp;rdeLocaleAttr=en" class="optionLink" rel="nofollow">Forgot Access Data?</a>
+                      <a href="/products/all/registration" class="optionLink" rel="nofollow">
+                        Register Now
+                      </a>
+                      
+                        <a href="https://profile.thieme.de/HTML/sso/ejournals/shibboleth.htm?hook_url=https://www.thieme-connect.de/products/ejournals/abstract/10.1055/a-2496-5240&amp;rdeLocaleAttr=en" class="optionLink" rel="nofollow">OpenAthens/Shibboleth Login</a>
+                      
+                    </form>
+                  
+                </li>
+              </ul>
+            </div>
+          
+        
+        
+
+        <div class="shadowMask"></div>
+      </li>
+      <li id="userCart">
+        <span class="headerFunctionTitle">
+        <a href="/products/ejournals/buyDocument">
+          Shopping Cart
+        </a>
+        
+
+
+
+
+
+
+
+
+
+        <a href="#" onClick="document.cadmus.submit(); return false;"></a>
+        </span>
+      </li>
+    </ul>
+  </div>
+  
+    <div id="institutionName">
+      
+    </div>
+    
+    
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+        <div id="institutionName">
+          
+        </div>
+      
+    
+  
+</header>
+<!-- end general/_header.gsp -->
+
+
+      
+
+      
+
+      <div id="main" role="main">
+        
+
+<!-- start general/_navPanel.gsp -->
+
+
+  
+
+
+<div id="navPanel">
+  <div id="navPanelHandle" onclick="tabletSlideMenu.toggle()"></div>
+  <div id="navPanelContent">
+    
+    <div id="cover" style="position: relative">
+      <img src="
+      
+        https://www.thieme-connect.de/media/10.1055-s-00000182/cover_big.jpg
+      
+    " pixelX="171" width="171" height="220" class="journalCover small" border="0" >
+      
+        <img src="/products/assets/desktop/img/oa-logo-ba6cca2dcd58e0cb3559f2da54f0a3b6.png" style="position: absolute; right: 8px; bottom: 10px" width="62px" height="40px" />
+      
+    </div>
+    
+    <div id="leftNavigation">
+      
+        <form action="/products/issue/jsonLoadIssues" method="post" name="toc" id="toc" >
+          <input type="hidden" name="shortname" value="jnlsr">
+          <input type="hidden" name="year">
+          <input type="hidden" name="isDisplayVolume" value="false">
+          <fieldset id="yearSelect">
+            <label>Year (Archive)</label>
+            <div id="yearSelectContainer">
+              <div id="currentYearSelection">
+                <div class="label" id="currentYear">
+                  2025
+                </div>
+              </div>
+              <ul class="selectList year">
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2025" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2025; getIssues(2025); return false">
+                        2025
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2024" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2024; getIssues(2024); return false">
+                        2024
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2023" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2023; getIssues(2023); return false">
+                        2023
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2022" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2022; getIssues(2022); return false">
+                        2022
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2021" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2021; getIssues(2021); return false">
+                        2021
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2020" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2020; getIssues(2020); return false">
+                        2020
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2019" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2019; getIssues(2019); return false">
+                        2019
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2018" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2018; getIssues(2018); return false">
+                        2018
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2017" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2017; getIssues(2017); return false">
+                        2017
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2016" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2016; getIssues(2016); return false">
+                        2016
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2015" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2015; getIssues(2015); return false">
+                        2015
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2014" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2014; getIssues(2014); return false">
+                        2014
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2013" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2013; getIssues(2013); return false">
+                        2013
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li>
+                      
+                      
+                      
+                      <a href="/products/ejournals/issues/10.1055/s-00000182/2012" onclick="document.getElementById(&#39;issueSelect&#39;).style.display=&#39;inline&#39;;document.toc.action=&#39;#&#39;; document.toc.year.value=2012; getIssues(2012); return false">
+                        2012
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            </div>
+          </fieldset>
+          
+          
+          <fieldset id="issueSelect" style="display: inline">
+            <label>Issues</label>
+            <ul class="selectList" id="issue">
+            </ul>
+          </fieldset>
+        </form>
+
+        <ul class="linkList">
+          
+            
+              <li>
+                <a href="/products/ejournals/issue/10.1055/s-015-60917">Table of Contents</a>
+              </li>
+            
+          
+          <li>
+            <a href="/products/ejournals/journal/10.1055/s-00000182">
+              
+                Current Issue
+              
+            </a>
+          </li>
+          
+          
+        </ul>
+      
+    </div>
+    
+    
+      <!-- start general/_adBoxPanel.gsp -->
+
+  
+  
+    
+      
+      
+    
+    
+      <div id="adSidebarLeft">
+        <script type="text/javascript">
+          window.TCFUtility.writeScript([
+            'https://adfarm1.adition.com/js?wp_id=568835&gdpr=${GDPR}&gdpr_consent=${GDPR_CONSENT_39}&prf[DOI]=10.1055-s-00000182&prf[UserLogin]=false&prf[IPLogin]=false&prf[MASTERKEY]=10.1055-s-00000182, false, false&prf[HWG]=false'
+          ]);
+        </script>
+        
+      </div>
+    
+  
+
+<!-- end general/_adBoxPanel.gsp -->
+
+    
+    
+    <div id="pdoptionalLinks" class="box standardBox"></div>
+    <div id="pdrelatedJournal" class="box linkBox"></div>
+    <div id="pdrelatedBook" class="box linkBox"></div>
+    
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+          <div class="box linkBox">
+            <div class="boxHeader">
+              Related Journals
+            </div>
+            <div class="boxContent">
+              <ul class="linkList">
+                
+                  
+                
+                  
+                    <li>
+                      <a href="https://www.thieme-connect.de/products/ejournals/journal/10.1055/s-00000180" class="linkListLeft">
+                        <div class="linkListLeftArrow"></div>
+                        <div class="linkListLeftText">
+                          Journal of Neurological Surgery Part A: Central European Neurosurgery
+                        </div>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <a href="https://www.thieme-connect.de/products/ejournals/journal/10.1055/s-00000181" class="linkListLeft">
+                        <div class="linkListLeftArrow"></div>
+                        <div class="linkListLeftText">
+                          Journal of Neurological Surgery Part B: Skull Base
+                        </div>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <a href="https://www.thieme-connect.de/products/ejournals/journal/10.1055/s-00028832" class="linkListLeft">
+                        <div class="linkListLeftArrow"></div>
+                        <div class="linkListLeftText">
+                          Brazilian Neurosurgery
+                        </div>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <a href="https://www.thieme-connect.de/products/ejournals/journal/10.1055/s-00028728" class="linkListLeft">
+                        <div class="linkListLeftArrow"></div>
+                        <div class="linkListLeftText">
+                          Indian Journal of Neurosurgery
+                        </div>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <a href="https://www.thieme-connect.de/products/ejournals/journal/10.1055/s-00000041" class="linkListLeft">
+                        <div class="linkListLeftArrow"></div>
+                        <div class="linkListLeftText">
+                          Neuropediatrics
+                        </div>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <a href="https://www.thieme-connect.de/products/ejournals/journal/10.1055/s-00000071" class="linkListLeft">
+                        <div class="linkListLeftArrow"></div>
+                        <div class="linkListLeftText">
+                          Seminars in Neurology
+                        </div>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <a href="https://www.thieme-connect.de/products/ejournals/journal/10.1055/s-00028781" class="linkListLeft">
+                        <div class="linkListLeftArrow"></div>
+                        <div class="linkListLeftText">
+                          The Surgery Journal
+                        </div>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <a href="https://www.thieme-connect.de/products/ejournals/journal/10.1055/s-00029202" class="linkListLeft">
+                        <div class="linkListLeftArrow"></div>
+                        <div class="linkListLeftText">
+                          Indian Journal of Neurotrauma
+                        </div>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <a href="https://www.thieme-connect.de/products/ejournals/journal/10.1055/s-00037682" class="linkListLeft">
+                        <div class="linkListLeftArrow"></div>
+                        <div class="linkListLeftText">
+                          International Journal of Epilepsy
+                        </div>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                    <li>
+                      <a href="https://www.thieme-connect.de/products/ejournals/journal/10.1055/s-00037681?lang=en" class="linkListLeft">
+                        <div class="linkListLeftArrow"></div>
+                        <div class="linkListLeftText">
+                          Journal of Neuroanaesthesiology and Critical Care
+                        </div>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            </div>
+          </div>
+        
+      
+    
+      
+        
+          <div class="box linkBox">
+            <div class="boxHeader">
+              Related Books
+            </div>
+            <div class="boxContent">
+              <ul class="linkList">
+                
+                  
+                
+                  
+                    <li>
+                      <a href="https://shop.thieme.com/Neurosurgery" class="linkListLeft">
+                        <div class="linkListLeftArrow"></div>
+                        <div class="linkListLeftText">
+                          Neurosurgery
+                        </div>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            </div>
+          </div>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+    
+  
+
+  <script type="text/javascript" src="/products/assets/js/plugins-4e60cc754d04fb5f811ad13176538668.js" ></script>
+  
+  
+</div>
+<!-- end general/_navPanel.gsp -->
+
+
+<div id="content">
+  
+  
+
+  <article>
+    <!-- start general/_adBoxPanel.gsp -->
+
+  
+  
+    
+      
+      
+    
+    
+      <script type="text/javascript">
+        window.TCFUtility.writeScript([
+          'https://adfarm1.adition.com/js?wp_id=3412883&gdpr=${GDPR}&gdpr_consent=${GDPR_CONSENT_39}&prf[DOI]=10.1055-s-00000182&prf[UserLogin]=false&prf[IPLogin]=false&prf[MASTERKEY]=10.1055-s-00000182, false, false&prf[HWG]=false'
+        ]);
+      </script>
+      
+    
+  
+
+<!-- end general/_adBoxPanel.gsp -->
+
+    <!-- start general/_tocIcons.gsp -->
+<div class="pageFunctions">
+
+  <div>
+
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+    
+    
+
+    
+      <div id="setRSSLink" class="toggleButton" title="Subscribe to RSS">
+        <div class="toggleContent">
+          <h4>Subscribe to RSS</h4>
+          <div>Please copy the URL and add it into your RSS Feed Reader.</div>
+          
+          <a href="https://www.thieme-connect.de/rss/thieme/en/10.1055-s-00000182.xml" target="_blank">https://www.thieme-connect.de/rss/thieme/en/10.1055-s-00000182.xml</a>
+        </div>
+      </div>
+    
+
+    
+
+    
+
+    
+      
+        <a href="/products/ejournals/ris/10.1055/a-2496-5240/BIB" id="saveLink" name="saveLink" class="functionItem" title="Download Bibliographical Data"></a>
+      
+    
+
+    
+      
+        
+      
+
+      
+        
+      
+
+      <div id="setShareLink" class="toggleButton" title="Share / Bookmark">
+        <div class="toggleContent">
+          <h4>Share / Bookmark</h4>
+          <a href="#" class="shareMenuItem" onclick="facebook('http://www.thieme-connect.de/products/ejournals/abstract/10.1055/a-2496-5240')"><i class="fa-brands fa-facebook"></i>Facebook</a>
+          <a href="#" class="shareMenuItem" onclick="twitter('http://www.thieme-connect.de/products/ejournals/abstract/10.1055/a-2496-5240')"><i class="fa-brands fa-x-twitter"></i>X</a>
+          <a href="#" class="shareMenuItem" onclick="linkedin('http://www.thieme-connect.de/products/ejournals/abstract/10.1055/a-2496-5240')"><i class="fa-brands fa-linkedin"></i>Linkedin</a>
+          <a href="#" class="shareMenuItem" onclick="weibo('http://www.thieme-connect.de/products/ejournals/abstract/10.1055/a-2496-5240')"><i class="fa-brands fa-weibo"></i>Weibo</a>
+        </div>
+      </div>
+    
+
+    
+
+    
+
+    
+      
+          
+              <a id="emailLink" class="functionItem" title="Recommend Article" href="mailto:?subject=Recommendation: Journal of Neurological Surgery Reports&body=I would like to recommend this article in Journal of Neurological Surgery Reports: %0D%0A %0D%0AHPV-associated Sinonasal Squamous Cell Carcinoma %0D%0A %0D%0AAbstract: http://www.thieme-connect.de/products/ejournals/abstract/10.1055/a-2496-5240 %0D%0AFull text HTML: http://www.thieme-connect.de/products/ejournals/html/10.1055/a-2496-5240 %0D%0AFull text PDF: http://www.thieme-connect.de/products/ejournals/pdf/10.1055%2Fa-2496-5240.pdf"></a>
+          
+      
+    
+
+    
+
+    
+
+    
+      
+        
+        
+          
+          
+          <a href="https://profile.thieme.de/HTML/sso/THIEME/login.htm?hook_url=https://www.thieme-connect.de/products/all/alerts&amp;rdeLocaleAttr=en" id="setAlertLink" class="functionItem" title="Subscribe to Alert Service"></a>
+        
+      
+    
+  </div>
+
+  
+    <div class="divPdfIcon">
+      <div class="divPdfIconInNewline">
+        
+          
+            <a href="/products/ejournals/pdf/10.1055/a-2496-5240.pdf" class="linkNotUnderlined">
+              Download PDF
+            </a>
+          
+        
+      </div>
+      <div>
+        
+          
+            <a href="/products/ejournals/pdf/10.1055/a-2496-5240.pdf" id="pdfDownloadLink" class="functionItem" title="PDF Download"></a>
+          
+        
+      </div>
+    </div>
+  
+
+  <input type="hidden" name="ebookDoi" value="">
+
+  
+  
+    
+  
+  <script type="text/javascript">
+
+  function facebook(url) {
+    ajaxSubmitStatisticEvent("10.1055/a-2496-5240", "facebook")
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url));
+    return false;
+  }
+  
+  function twitter(url) {
+    ajaxSubmitStatisticEvent("10.1055/a-2496-5240", "twitter")
+    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("I'm reading") + '&url=' + encodeURIComponent(url));
+    return false;
+  }
+  
+  function linkedin(url) {
+    ajaxSubmitStatisticEvent("10.1055/a-2496-5240", "linkedin")
+    window.open('https://www.linkedin.com/cws/share?url=' + encodeURIComponent(url));
+    return false;
+  }
+  
+  function weibo(url) {
+    ajaxSubmitStatisticEvent("10.1055/a-2496-5240", "weibo")
+    window.open('http://service.weibo.com/share/share.php?title=' + encodeURIComponent("I'm reading") + '&url=' + encodeURIComponent(url));
+    return false;
+  }
+
+  $(document).ready(function() {
+    $('#emailLink').click(function(){
+      ajaxSubmitStatisticEvent("10.1055/a-2496-5240", "recommend")
+    });
+    $('#recommend').click(function(){
+      ajaxSubmitStatisticEvent("10.1055/a-2496-5240", "recommend")
+    });
+  });
+
+  function ajaxSubmitStatisticEvent(doi, type) {
+    var url = jsContextPath + "/json/submitStatisticEvent?doi=" + doi + "&type=" + type;
+    var request = $.ajax({
+      type : 'GET',
+      dataType : 'json',
+      async : true,
+      cache: false,
+      url : url,
+      success : function(data) {
+      }
+    });
+  }
+
+
+</script>
+</div>
+<!-- end general/_tocIcons.gsp -->
+
+    <!-- start abstractText -->
+    <div class="articleHeader">
+<div xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:exsl="http://exslt.org/common" class="doi">
+<div class="openAccess-articleImageContainer">
+<img border="0" height="27px" src="/products/assets/desktop/img/oa-logo.png"></div>
+<div class="openAccess-articleHeaderContainer">CC BY-NC-ND 4.0 &middot; J Neurol Surg Rep 2025; 86(01): e1-e3<br>DOI: 10.1055/a-2496-5240</div>
+</div>
+<div class="articleType">
+<div>Case Report</div>
+</div>
+<h1>HPV-associated Sinonasal Squamous Cell Carcinoma</h1>
+<span id="authorlist"><span class="author">
+<div class="name">
+<a class="orchid-id" target="_blank" href="https://orcid.org/0000-0003-4111-9975">Rex H. Lee</a>&thinsp;
+      </div>
+<div class="affiliation">
+<sup>1
+          &thinsp;
+        </sup>Department of Otolaryngology - Head and Neck Surgery, University of California San Francisco, San Francisco, California, United States</div>
+<div class="authorseparator">, </div>
+</span><span class="author">
+<div class="name">Annemieke van Zante</div>
+<div class="affiliation">
+<sup>2
+          &thinsp;
+        </sup>Department of Pathology, University of California San Francisco, San Francisco, California, United States</div>
+<div class="authorseparator">, </div>
+</span><span class="author">
+<div class="name">Ezequiel Goldschmidt</div>
+<div class="affiliation">
+<sup>3
+          &thinsp;
+        </sup>Department of Neurological Surgery, University of California San Francisco, San Francisco, California, United States</div>
+<div class="authorseparator">, </div>
+</span><span class="author">
+<div class="name">Ivan H. El-Sayed</div>
+<div class="affiliation">
+<sup>1
+          &thinsp;
+        </sup>Department of Otolaryngology - Head and Neck Surgery, University of California San Francisco, San Francisco, California, United States</div>
+<div class="affiliation"></div>
+</span><a style="text-decoration: none;" class="toggle-affiliation-infos" href="#">&rsaquo; Author Affiliations<span class="verbum"></span></a></span>
+<div class="toggleMenu articleToggleMenu">
+<a style="text-decoration: none;" href="#info">
+      &rsaquo; Further Information</a>
+<div class="platformLink">
+<span class="label"><a style="color: #000000; text-decoration: none" class="virtualLink">Also available at</a></span><a data-url="https://eref.thieme.de/10.1055/a-2496-5240" data-id="eRef" data-target="eRef" target="_blank" class="btnPlatformLink linkFunction" href="https://eref.thieme.de/10.1055/a-2496-5240"><img src="/media/10.1055-s-00000000/btn-eRef-desktop.png"></a><a data-url="https://medone.thieme.com/10.1055/a-2496-5240" data-id="MedOne" data-target="MedOne" target="_blank" class="btnPlatformLink linkFunction" href="https://medone.thieme.com/10.1055/a-2496-5240"><img src="/media/10.1055-s-00000000/MO_button_img.png"></a>
+</div>
+</div>
+</div><ul class="tabBar borderBottom" id="articleTabs">
+<li class="tab active">
+<a href="#abstract">Abstract</a>
+</li>
+<li class="tab">
+<a href="/products/ejournals/html/10.1055/a-2496-5240">Full Text</a>
+</li>
+<li class="tab">
+<a href="#references">References</a>
+</li>
+</ul><div id="sections">
+<section id="abstract">
+<div class="articleFunctions">&nbsp;<input value="ai10.1055/a-2496-5240,10.1055/a-2496-5240" name="ai" type="hidden">
+<div style="display: none" id="sfx10.1055/a-2496-5240">
+<a id="sfxServer" data-href="?id=doi:10.1055/a-2496-5240&amp;sid=Thieme:Connect&amp;jtitle=Journal of Neurological Surgery Reports&amp;issue=01&amp;volume=86&amp;date=2025&amp;issn=2193-6358&amp;spage=e1&amp;epage=e3&amp;aulast=Lee&amp;aufirst=Rex H.&amp;__char_set=utf8&amp;atitle=HPV-associated Sinonasal Squamous Cell Carcinoma" target="sfx"><span class="articleAccessLabel sfx"><img id="sfxImageUrl" src="" alt="SFX Search" height="15" width="52"></span></a>
+</div>&nbsp;<a data-url="https://s100.copyright.com/AppDispatchServlet" data-id="CCC RightsLink" data-target="CCC RightsLink" onClick="RightslinkPopUp(&quot;2193-6366&quot;, &quot;HPV-associated Sinonasal Squamous Cell Carcinoma&quot;, &quot;01/07/2025&quot;, &quot;Rex H. Lee, Annemieke van Zante, Ezequiel Goldschmidt, Ivan H. El-Sayed&quot;, &quot;The Author(s). Rights managed by Thieme.&quot;, &quot;10.1055/a-2496-5240&quot;, &quot;e1&quot;, &quot;e3&quot;, &quot;86&quot;, &quot;01&quot;, &quot;CC BY-NC-ND&quot;)" class="gotoLink linkFunction" href="javascript:;">Permissions and Reprints</a>
+</div>
+<figure style="margin-left: 30px" class="floatRight">
+<a data-doi="10.1055/a-2496-5240" data-caption="" data-id="10-1055-a-2496-5240_24oct0069-1.jpg" data-cssClass="previewOverlay" href="https://www.thieme-connect.de/media/jnlsr/202501/lookinside/10-1055-a-2496-5240_24oct0069-1.jpg" class="zoomFunction alignLeft"><img src="https://www.thieme-connect.de/media/jnlsr/202501/lookinside/thumbnails/10-1055-a-2496-5240_24oct0069-1.jpg"></a>
+<figcaption></figcaption>
+</figure>
+        
+<a name="N10B94"></a>
+<h3>Abstract</h3>
+        
+<p>Human papillomavirus (HPV)-associated sinonasal squamous cell carcinoma (SNSCC) (HPV+ SNSCC) is a recently recognized entity that accounts for up to one-third of SNSCC. Although at present these cancers are not routinely tested for HPV, the incidence is increasing and HPV+ SNSCC is associated with superior survival outcomes compared with HPV&minus; SNSCC. Here, we present the case of a patient with HPV+ SNSCC treated with endoscopic resection followed by postoperative radiation and review the literature summarizing epidemiology and management of this disease, with emphasis on the importance of HPV testing in SNSCC.</p>
+      
+<i></i><i></i>
+<div class="articleKeywords">
+        
+<a name="N10B9D"></a>
+<h3>Keywords</h3>
+        human papillomavirus - 
+        squamous cell carcinoma - 
+        sinonasal - 
+        endoscopic
+      </div>
+<br>
+<br>
+<a name="info"></a>
+<h3>Publication History</h3>
+<p>Received: 21 October 2024<br>
+<br>Accepted: 24 November 2024<br>
+<br>Accepted Manuscript online:<br>05 December 2024<br>
+<br>Article published online:<br>07 January 2025<br>
+</p>
+<p>&copy; 2025. The Author(s). This is an open access article published by Thieme under the terms of the Creative Commons Attribution-NonDerivative-NonCommercial License, permitting copying and reproduction so long as the original work is given appropriate credit. Contents may not be used for commercial purposes, or adapted, remixed, transformed or built upon. (https://creativecommons.org/licenses/by-nc-nd/4.0/)</p>
+<p>Georg Thieme Verlag KG<br>Oswald-Hesse-Stra&szlig;e 50, 70469 Stuttgart, Germany</p>
+<div id="trendmd-suggestions"></div>
+</section>
+<section id="htmlfulltext">&nbsp;</section>
+<section id="references">
+<a name=""></a>
+<ul class="literaturliste">
+      
+<a name="N10C6A"></a>
+<li>
+<h3>References</h3>
+</li>
+      
+<li>
+<a name="JR24oct0069-1"></a><strong>1</strong> 
+          
+            Thawani R, 
+          
+          
+            Kim MS, 
+          
+          
+            Arastu A. 
+          
+          et al. 
+        The contemporary management of cancers of the sinonasal tract in adults. CA Cancer J Clin 2023; 73 (01) 72-112 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-1/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.3322/caac.21752" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.3322/caac.21752" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/35916666" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/35916666" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupThe contemporary management of cancers of the sinonasal tract in adults" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=The contemporary management of cancers of the sinonasal tract in adults&amp;publication_year=2023" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-2"></a><strong>2</strong> 
+          
+            Fukuda K, 
+          
+          
+            Shibata A. 
+          
+        Exposure-response relationships between woodworking, smoking or passive smoking, and squamous cell neoplasms of the maxillary sinus. Cancer Causes Control 1990; 1 (02) 165-168 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-2/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.1007/BF00053168" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.1007/BF00053168" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/2102286" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/2102286" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupExposure-response relationships between woodworking, smoking or passive smoking, and squamous cell neoplasms of the maxillary sinus" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=Exposure-response relationships between woodworking, smoking or passive smoking, and squamous cell neoplasms of the maxillary sinus&amp;publication_year=1990" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-3"></a><strong>3</strong> 
+          
+            Chang Sing Pang KJW, 
+          
+          
+            Mur T, 
+          
+          
+            Collins L, 
+          
+          
+            Rao SR, 
+          
+          
+            Faden DL. 
+          
+        Human papillomavirus in sinonasal squamous cell carcinoma: a systematic review and meta-analysis. Cancers (Basel) 2020; 13 (01) 45 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-3/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.3390/cancers13010045" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.3390/cancers13010045" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/33561073" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/33561073" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupHuman papillomavirus in sinonasal squamous cell carcinoma: a systematic review and meta-analysis" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=Human papillomavirus in sinonasal squamous cell carcinoma: a systematic review and meta-analysis&amp;publication_year=2020" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-4"></a><strong>4</strong> 
+          
+            Oliver JR, 
+          
+          
+            Lieberman SM, 
+          
+          
+            Tam MM. 
+          
+          et al. 
+        Human papillomavirus and survival of patients with sinonasal squamous cell carcinoma. Cancer 2020; 126 (07) 1413-1423 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-4/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.1002/cncr.32679" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.1002/cncr.32679" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/31886908" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/31886908" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupHuman papillomavirus and survival of patients with sinonasal squamous cell carcinoma" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=Human papillomavirus and survival of patients with sinonasal squamous cell carcinoma&amp;publication_year=2020" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-5"></a><strong>5</strong> 
+          
+            Ramkumar SP, 
+          
+          
+            Simpson MC, 
+          
+          
+            Adjei Boakye E. 
+          
+          et al. 
+        High-risk human papillomavirus 16/18 associated with improved survival in sinonasal squamous cell carcinoma. Cancer 2023; 129 (09) 1372-1383 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-5/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.1002/cncr.34690" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.1002/cncr.34690" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/36808090" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/36808090" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupHigh-risk human papillomavirus 16/18 associated with improved survival in sinonasal squamous cell carcinoma" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=High-risk human papillomavirus 16/18 associated with improved survival in sinonasal squamous cell carcinoma&amp;publication_year=2023" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-6"></a><strong>6</strong> 
+          
+            Chowdhury N, 
+          
+          
+            Alvi S, 
+          
+          
+            Kimura K. 
+          
+          et al. 
+        Outcomes of HPV-related nasal squamous cell carcinoma. Laryngoscope 2017; 127 (07) 1600-1603 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-6/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.1002/lary.26477" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.1002/lary.26477" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/28271500" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/28271500" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupOutcomes of HPV-related nasal squamous cell carcinoma" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=Outcomes of HPV-related nasal squamous cell carcinoma&amp;publication_year=2017" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-7"></a><strong>7</strong> 
+          
+            London Jr NR, 
+          
+          
+            Windon MJ, 
+          
+          
+            Amanian A. 
+          
+          et al. 
+        Evaluation of the incidence of human papillomavirus-associated squamous cell carcinoma of the sinonasal tract among US adults. JAMA Netw Open 2023; 6 (02) e2255971 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-7/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.1001/jamanetworkopen.2022.55971" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.1001/jamanetworkopen.2022.55971" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/36787144" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/36787144" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupEvaluation of the incidence of human papillomavirus-associated squamous cell carcinoma of the sinonasal tract among US adults" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=Evaluation of the incidence of human papillomavirus-associated squamous cell carcinoma of the sinonasal tract among US adults&amp;publication_year=2023" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-8"></a><strong>8</strong> 
+          
+            Fakhry C, 
+          
+          
+            Lacchetti C, 
+          
+          
+            Rooper LM. 
+          
+          et al. 
+        Human papillomavirus testing in head and neck carcinomas: ASCO clinical practice guideline endorsement of the College of American Pathologists guideline. J Clin Oncol 2018; 36 (31) 3152-3161 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-8/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.1200/JCO.18.00684" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.1200/JCO.18.00684" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/30188786" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/30188786" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupHuman papillomavirus testing in head and neck carcinomas: ASCO clinical practice guideline endorsement of the College of American Pathologists guideline" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=Human papillomavirus testing in head and neck carcinomas: ASCO clinical practice guideline endorsement of the College of American Pathologists guideline&amp;publication_year=2018" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-9"></a><strong>9</strong> 
+          
+            Boland JM, 
+          
+          
+            McPhail ED, 
+          
+          
+            Garc&iacute;a JJ, 
+          
+          
+            Lewis JE, 
+          
+          
+            Schembri-Wismayer DJ. 
+          
+        Detection of human papilloma virus and p16 expression in high-grade adenoid cystic carcinoma of the head and neck. Mod Pathol 2012; 25 (04) 529-536 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-9/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.1038/modpathol.2011.186" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.1038/modpathol.2011.186" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/22157933" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/22157933" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupDetection of human papilloma virus and p16 expression in high-grade adenoid cystic carcinoma of the head and neck" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=Detection of human papilloma virus and p16 expression in high-grade adenoid cystic carcinoma of the head and neck&amp;publication_year=2012" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-10"></a><strong>10</strong> 
+          
+            Chung CH, 
+          
+          
+            Zhang Q, 
+          
+          
+            Kong CS. 
+          
+          et al. 
+        p16 protein expression and human papillomavirus status as prognostic biomarkers of nonoropharyngeal head and neck squamous cell carcinoma. J Clin Oncol 2014; 32 (35) 3930-3938 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-10/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.1200/JCO.2013.54.5228" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.1200/JCO.2013.54.5228" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/25267748" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/25267748" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupp16 protein expression and human papillomavirus status as prognostic biomarkers of nonoropharyngeal head and neck squamous cell carcinoma" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=p16 protein expression and human papillomavirus status as prognostic biomarkers of nonoropharyngeal head and neck squamous cell carcinoma&amp;publication_year=2014" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-11"></a><strong>11</strong> 
+          
+            Amanian A, 
+          
+          
+            Ishii M, 
+          
+          
+            Fakhry C, 
+          
+          
+            London Jr NR. 
+          
+        Epidemiologic trends in human papillomavirus-associated sinonasal squamous cell carcinoma. JAMA Otolaryngol Head Neck Surg 2024; 150 (07) 609-618 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-11/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.1001/jamaoto.2024.1311" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.1001/jamaoto.2024.1311" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/38842800" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/38842800" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupEpidemiologic trends in human papillomavirus-associated sinonasal squamous cell carcinoma" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=Epidemiologic trends in human papillomavirus-associated sinonasal squamous cell carcinoma&amp;publication_year=2024" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-12"></a><strong>12</strong> 
+          
+            Ferrari M, 
+          
+          
+            Taboni S, 
+          
+          
+            Carobbio ALC. 
+          
+          et al. 
+        Sinonasal squamous cell carcinoma, a narrative reappraisal of the current evidence. Cancers (Basel) 2021; 13 (11) 2835 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-12/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.3390/cancers13112835" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.3390/cancers13112835" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/34200193" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/34200193" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupSinonasal squamous cell carcinoma, a narrative reappraisal of the current evidence" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=Sinonasal squamous cell carcinoma, a narrative reappraisal of the current evidence&amp;publication_year=2021" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="OR24oct0069-13"></a><strong>13</strong> NCCN Clinical Practice Guidelines in Oncology. NCCN Guidelines for Head and Neck Cancers. 2024 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/OR24oct0069-13/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://pubmed.ncbi.nlm.nih.gov/" data-id="PubMed" data-target="PubMed" onClick="pubmed('','','','','')" href="#" class="linkFunction">PubMed</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-14"></a><strong>14</strong> 
+          
+            Melder KL, 
+          
+          
+            Geltzeiler M. 
+          
+        Induction chemotherapy for locoregionally advanced sinonasal squamous cell carcinoma and sinonasal undifferentiated carcinoma: a comprehensive review. Cancers (Basel) 2023; 15 (15) 3798 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-14/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.3390/cancers15153798" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.3390/cancers15153798" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/37568614" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/37568614" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupInduction chemotherapy for locoregionally advanced sinonasal squamous cell carcinoma and sinonasal undifferentiated carcinoma: a comprehensive review" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=Induction chemotherapy for locoregionally advanced sinonasal squamous cell carcinoma and sinonasal undifferentiated carcinoma: a comprehensive review&amp;publication_year=2023" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+      
+<li>
+<a name="JR24oct0069-15"></a><strong>15</strong> 
+          
+            Sharma A, 
+          
+          
+            Tang AL, 
+          
+          
+            Takiar V, 
+          
+          
+            Wise-Draper TM, 
+          
+          
+            Langevin SM. 
+          
+        Human papillomavirus and survival of sinonasal squamous cell carcinoma patients: a systematic review and meta-analysis. Cancers (Basel) 2021; 13 (15) 3677 <div class="referenceLinks">
+<a href="/products/ejournals/ris/10.1055/a-2496-5240/id/JR24oct0069-15/BIB">
+<div class="referenceLinkRis"></div>
+</a>
+<div class="referenceLinkText">
+<a data-url="https://doi.org/10.3390/cancers13153677" data-id="CrossRef" data-target="CrossRef" target="linkout" href="https://doi.org/10.3390/cancers13153677" class="linkFunction">Crossref</a><a data-url="https://pubmed.ncbi.nlm.nih.gov/34359578" data-id="PubMed" data-target="PubMed" target="linkout" href="https://pubmed.ncbi.nlm.nih.gov/34359578" class="linkFunction">PubMed</a><a data-url="https://scholar.google.com/scholar_lookupHuman papillomavirus and survival of sinonasal squamous cell carcinoma patients: a systematic review and meta-analysis" data-id="Google Scholar" data-target="Google Scholar" target="linkout" href="https://scholar.google.com/scholar_lookup?title=Human papillomavirus and survival of sinonasal squamous cell carcinoma patients: a systematic review and meta-analysis&amp;publication_year=2021" class="linkFunction">Search in Google Scholar</a>
+</div>
+</div>
+</li>
+    
+</ul>
+<br>
+</section>
+<section id="images">&nbsp;</section>
+<section id="supmat">
+<ul class="tabBar borderBottom" id="supmatTabs"></ul>
+<div class="tabContentContainer"></div>
+</section>
+</div>
+
+    <!-- end abstractText -->
+  </article>
+
+  <div class="metrics-container-main">
+    <div class="metrics-container-left">
+      <div class="metrics-container-cell">
+        <div class="metrics-altmetrics"><div data-doi="10.1055/a-2496-5240" class="altmetric-embed" data-link-target="_blank"  data-badge-details="right" data-badge-type="donut" data-hide-no-mentions="true" ></div></div>
+      </div>
+    </div>
+    <div class="metrics-container-right">
+      <div class="metrics-container-cell">
+        <!--TC-1960-->
+        <div id="crossrefcites" class="crossrefcites" data-doi="10.1055/a-2496-5240"/></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- start general/_adBoxPanel.gsp -->
+
+  
+  
+    
+      
+      
+    
+    
+      <div id="adSidebarOverBottom">
+        <script type="text/javascript">
+          window.TCFUtility.writeScript([
+            'https://adfarm1.adition.com/js?wp_id=4863507&gdpr=${GDPR}&gdpr_consent=${GDPR_CONSENT_39}&prf[DOI]=10.1055-s-00000182&prf[UserLogin]=false&prf[IPLogin]=false&prf[MASTERKEY]=10.1055-s-00000182, false, false&prf[HWG]=false'
+          ]);
+        </script>
+        
+      </div>
+    
+  
+
+<!-- end general/_adBoxPanel.gsp -->
+<!-- start general/_adBoxPanel.gsp -->
+
+  
+  
+    
+      
+      
+    
+    
+      <div id="adSidebarBottom">
+        <script type="text/javascript">
+          window.TCFUtility.writeScript([
+            'https://adfarm1.adition.com/js?wp_id=568876&gdpr=${GDPR}&gdpr_consent=${GDPR_CONSENT_39}&prf[DOI]=10.1055-s-00000182&prf[UserLogin]=false&prf[IPLogin]=false&prf[MASTERKEY]=10.1055-s-00000182, false, false&prf[HWG]=false'
+          ]);
+        </script>
+        
+      </div>
+    
+  
+
+<!-- end general/_adBoxPanel.gsp -->
+
+  <div id="div_vgwpixel" style="display: none;"></div>
+</div>
+
+<!-- start article/jsAbstract.gsp -->
+
+
+    <script type="text/javascript">
+        window.TCFUtility.writeScript([
+            'https://imagesrv.adition.com/js/adition.js'
+        ]);
+    </script>
+    
+
+
+<script type="text/javascript">
+
+  var jsContextPath = "/products";
+  var jsIsMobile = false;
+  var jsWasMobileFlagAlreadyAsked = false;
+  
+  // Facetten Aufbau Desktop
+  var inPageFacetsEndPoint = $("#navPanel").attr("data-inPageFacetsEndPoint");
+  // Facetten Aufbau Mobile
+  if ($("#content").attr("data-inPageFacetsEndPoint") != null) {
+    inPageFacetsEndPoint = $("#content").attr("data-inPageFacetsEndPoint");
+  }
+  var inPageFacetsEndPoint = jsContextPath + "/" + inPageFacetsEndPoint;
+
+  $(document).ready(function() {
+
+    $('.hwgBoxOverlay').delay(5000).css({
+      width : screen.width + 'px',
+      height : $(document).height() + 'px'
+    });
+
+    const setCookie = function(cname, cvalue) {
+      const d = new Date();
+      d.setTime(d.getTime() + ((21) * 24 * 60 * 60 * 1000)); // days to ms
+      let expires = "expires=" + d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    const getCookie = function(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    let selectedFeedback = -1;
+    // satisfactionPopup
+    const buildFeedback = function() {
+      const votes = 10;
+
+      if (document.getElementById("feedbackBlock").innerHTML.length == 0) {
+        for (let i = -1; i < votes; i++) {
+          let newDiv = document.createElement("div");
+          newDiv.className = "feedback-value";
+          newDiv.innerHTML = i + 1;
+          newDiv.setAttribute("data-value", i + 1);
+          document.getElementById("feedbackBlock").appendChild(newDiv);
+        }
+        $("#hgwSubmit").val('true');
+      }
+    };
+
+    const buildDoctorFeedback = function() {
+      const options = [
+        'Arzt', 'Pflegekraft', 'Therapeut', 'Hebamme', 'Student', 'SonstigesSelect'
+      ];
+
+      const selectOptions = [
+        'SonstigesSelect', 'Apotheker', 'Chemiker', 'Pharmaunternehmen', 'Assistenz', 'Fachangestellter', 'Rettungssanitaeter', 'Verwaltungsdienst', 'Wirtschaftsdienst', 'TechnischerDienst', 'Sonstiges'
+      ];
+
+      if (document.getElementById("doctorFeedbackBlock").innerHTML.length == 0) {
+        for (let i = 0; i < options.length; i++) {
+          let parentDiv = document.createElement("div");
+          parentDiv.className = "doctorFeedbackElement";
+          let newDiv = document.createElement("input");
+          newDiv.className = "doctor-feedback-value";
+          newDiv.type = 'radio';
+          newDiv.name = 'doctorRadio';
+          if (options[i] == 'SonstigesSelect') {
+            newDiv.value = "";
+          } else {
+            newDiv.value = options[i];
+          }
+          if (i == 0) {
+            newDiv.checked = 'true';
+          }
+
+          let newLabel = document.createElement("label");
+          if (i == 0) {
+            newLabel.style = "font-weight: bold"
+          }
+          var text = "Physician";
+          if (options[i] == 'Pflegekraft') {
+            text = "Health and care worker";
+          } else if (options[i] == 'Therapeut') {
+            text = "Therapist";
+          } else if (options[i] == 'Hebamme') {
+            text = "Midwife/delivery nurse";
+          } else if (options[i] == 'Student') {
+            text = "Student (human medicine, dentistry, veterinary medicine)";
+          } else if (options[i] == 'SonstigesSelect') {
+            text = "&nbsp;";
+          }
+          newLabel.innerHTML = " " + text;
+
+          parentDiv.appendChild(newDiv);
+          parentDiv.appendChild(newLabel);
+
+          let selectList = document.createElement("select");
+          selectList.id = "doctorSelect";
+          selectList.setAttribute("onfocus", "this.size=10;");
+          selectList.setAttribute("onblur", "this.size=0;");
+          selectList.setAttribute("onchange", "this.size=1; this.blur();");
+          //selectList.name = "doctorSelect";
+          if (options[i] == 'SonstigesSelect') {
+            for (let j = 0; j < selectOptions.length; j++) {
+              var option = document.createElement("option");
+              if (selectOptions[j] == 'SonstigesSelect') {
+                option.value = "";
+              } else {
+                option.value = selectOptions[j];
+              }
+              //option.setAttribute("class", "b");
+              var text = "other, please select";
+              if (selectOptions[j] == 'Apotheker') {
+                text = "Pharmacist";
+              } else if (selectOptions[j] == 'Chemiker') {
+                text = "Chemist";
+              } else if (selectOptions[j] == 'Pharmaunternehmen') {
+                text = "Employee of pharmaceutical company / wholesaler";
+              } else if (selectOptions[j] == 'Assistenz') {
+                text = "Medical technical assistant";
+              } else if (selectOptions[j] == 'Fachangestellter') {
+                text = "Med. Medical Assistant";
+              } else if (selectOptions[j] == 'Rettungssanitaeter') {
+                text = "Paramedic";
+              } else if (selectOptions[j] == 'Verwaltungsdienst') {
+                text = "Administrative service in hospital";
+              } else if (selectOptions[j] == 'Wirtschaftsdienst') {
+                text = "Economic and supply service in the hospital";
+              } else if (selectOptions[j] == 'TechnischerDienst') {
+                text = "Technical service in the hospital";
+              } else if (selectOptions[j] == 'Sonstiges') {
+                text = "Other";
+              }
+              option.text = text;
+              selectList.appendChild(option);
+            }
+          }
+          if (selectList.length > 0) {
+            parentDiv.appendChild(selectList);
+          }
+          document.getElementById("doctorFeedbackBlock").appendChild(parentDiv);
+        }
+      }
+    };
+
+    $('#doctorFeedbackBlock').on('click', '.doctor-feedback-value', function() {
+      var job = $('input[name="doctorRadio"]:checked').val();
+      if (job !== undefined && job.length > 0) {
+        $('#doctorSelect').val('');
+      }
+    });
+
+    //$('#doctorFeedbackBlock').on('change', '.doctorFeedbackElement', function() {
+    //  $('input[name="doctorRadio"]').filter('[value=""]').prop('checked', true);
+    //});
+
+    $('#doctorFeedbackBlock').on('click', '.doctorFeedbackElement', function() {
+      $(this).find('input').prop('checked', true);
+      $('#doctorFeedbackBlock').find('label').removeAttr('style');
+      $(this).find('label').attr('style', 'font-weight: bold');
+      var job = $('input[name="doctorRadio"]:checked').val();
+      if (job !== undefined && job.length > 0) {
+        $('#doctorSelect').val('');
+        $('#doctorSelect').removeClass("b");
+        $('#doctorSelect').find('option').removeAttr('class');
+      }
+    });
+
+    $('#doctorFeedbackBlock').on('focus', '.doctorFeedbackElement', function() {
+      $('#doctorSelect').val('');
+    });
+
+    $('#doctorFeedbackBlock').on('blur', '#doctorSelect', function() {
+      $('#doctorSelect').addClass("b");
+      for (var i = 0; i < this.length; i++) {
+        if (this.value == this.options[i].value) {
+          this.options[i].setAttribute("class", "bold");
+        } else {
+          this.options[i].setAttribute("class", "normal");
+        }
+      }
+    });
+
+    $('#feedbackBlock').on('click', '.feedback-value', function() {
+      const that = this;
+      $(".feedback-value").each(function(index, element) {
+        element.className = "feedback-value";
+      });
+      that.className += " feedback-selected"
+      selectedFeedback = parseInt(this.getAttribute('data-value'));
+    });
+
+    $("#hwgOk").click(function() {
+      var hwgSubmit = $("#hgwSubmit").val();
+      // Feedback "Zufriedenheit"
+      if (hwgSubmit === 'true') {
+        if (selectedFeedback >= 0 && selectedFeedback < 11) {
+          $("#hgwSubmit").val('false');
+          // send request
+          const begrundung = $("#begrundung").val();
+          const url = '/products/json/addHwgValue?value=' + selectedFeedback + '&text=' + begrundung;
+          const request = $.ajax({
+            type : 'GET',
+            async : true,
+            cache: false,
+            url,
+            success : function(data) {
+              // close popup
+              setCookie('hwg_value', false);
+              $('#hwg-popover').css('display', 'none');
+              $("#begrundung").val("");
+            }
+          });
+        }
+      }
+    });
+
+    $("#hwgCloseLink").click(function() {
+      var hwgSubmit = $("#hgwSubmit").val();
+      $("#hgwSubmit").val('false');
+      if (hwgSubmit === 'true') {
+        // send request
+        const url = '/products/json/addHwgValue?value=keine Angabe&text=';
+        const request = $.ajax({
+          type : 'GET',
+          async : true,
+          cache: false,
+          url,
+          success : function(data) {
+            // close popup
+            setCookie('hwg_value', false);
+            $('#hwg-popover').css('display', 'none');
+            $("#begrundung").val("");
+          }
+        });
+      }
+    });
+
+    $("#hwgDoctorOk").click(function() {
+      // send request
+      var job = $('input[name="doctorRadio"]:checked').val()
+      if (job == undefined || job.length == 0) {
+        job = $('#doctorSelect').val();
+      }
+
+      if (job !== undefined && job.length > 0) {
+        //if($('input[name="doctorRadio"]:checked').val() === "Sonstiges") {
+        if(job === "Arzt" || $('#doctorSelect').val() === "Apotheker" || $('#doctorSelect').val() === "Pharmaunternehmen") {
+          setCookie('hwg_job_value', true);
+        } else {
+          setCookie('hwg_job_value', false);
+        }
+        $('#hwg-popover').css('display', 'none');
+
+        // TC-2224: Store profession
+        const url = '/products/json/addHwgValue?value=profession&text=' + job;
+        const request = $.ajax({
+          type : 'GET',
+          async : true,
+          cache: false,
+          url,
+          success : function(data) {
+            // close popup
+            $('#hwg-popover').css('display', 'none');
+            $("#begrundung").val("");
+          }
+        });
+      }
+
+      window.location.reload();
+    });
+
+    
+
+    $("#doctorCloseLink").click(function() {
+      // send request
+      setCookie('hwg_job_value', false);
+      $('#hwg-popover').css('display', 'none');
+    });
+
+    $("#currentYearCopyright").text(new Date().getFullYear());
+  });
+  
+  $(function(){
+    $('.selectList.dropMenu>li>a').click(function(e){
+      e.preventDefault();
+      var selectedId = $(this).attr('id');
+      $('#navSearchRadius').val(selectedId);
+      $(this).closest('form').submit();
+    });     
+  });
+
+  
+  
+  function open_fg(url, id) {
+    fgwindow = window.open(url, id);
+    fgwindow.focus();
+  }
+  
+  function showElement(div) {
+    with(document.getElementById(div).style){
+      if(display == "none"){
+        display = "inline";
+      } else {
+        display = "none";
+      }
+    }
+  }
+        
+	function openImage(content) {
+		var myWindow = window.open("", "newWindow", "width=600,height=300,left=100,top=200,scrollbars=1");
+		myWindow.document.write('<img src="' + content + '"/>');
+		myWindow.document.close();
+		myWindow.focus();		
+	}
+
+	//Gets the parameters from a URL
+	function getUrlParam(name){
+	  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+	  var regexS = "[\\?&]" + name + "=([^&#]*)";
+	  var regex = new RegExp(regexS);
+	  var results = regex.exec(window.location.hash);
+
+	  if(results === null) {
+	    results = regex.exec(window.location.search);
+	  }
+
+	  if(results === null) {
+	    return "";
+	  }else{
+	    return decodeURIComponent(results[1].replace(/\+/g, " "));
+	  }
+	}
+
+  $(function(){
+    $("#pdfLink").click(function(evt){
+        evt.preventDefault();
+        var link = $(this).attr("href");
+        setTimeout(function() {
+            window.location.href = link;
+        }, 200);
+    });
+    $("#pdfLinkTab").click(function(evt){
+      evt.preventDefault();
+      var link = $(this).attr("href");
+      setTimeout(function() {
+          window.location.href = link;
+      }, 200);
+    });
+  });
+
+  function switchVideo(id, newmp4) {
+	   var video = document.getElementById(id);
+	   var videosource = document.getElementById('source-' + id);
+	   video.pause();
+	   videosource.setAttribute('src', newmp4);
+	   video.load();
+	   video.play();
+         $("#video-"+ id + "handy").removeClass("b");
+           $("#video-"+ id + "360p").removeClass("b");
+           $("#video-"+ id + "480p").removeClass("b");
+         $("#video-"+ id + "720p").removeClass("b");
+         if (newmp4.indexOf("handy") > -1) {
+             $("#video-"+ id + "handy").addClass("b");
+         } else if (newmp4.indexOf("480p") > -1) {
+             $("#video-"+ id + "480p").addClass("b");
+         } else if (newmp4.indexOf("720p") > -1) {
+             $("#video-"+ id + "720p").addClass("b");
+         } else {
+             $("#video-"+ id + "360p").addClass("b");
+         }
+	 }
+
+  function pubmed(au, publ, yr, vol, pgss) {
+    au_string = '';
+    if (au != '') {
+      au = au.replace(/\./g, "");
+      au = au.replace(/ /g, "+");
+      au_string = '+AND+' + au + '[auth]';
+    }
+    vol = vol + '*';
+    pubmed_window = window.open(
+            'https://pubmed.ncbi.nlm.nih.gov/?term='
+            + vol
+            + '[volume]+AND+'
+            + pgss
+            + '[page]+AND+'
+            + yr + '[pdat]' + au_string, "linkout");
+    pubmed_window.focus();
+  }
+
+</script>
+
+
+
+<script type="text/javascript">
+
+    function vgwPixelCall(articleDoi, free) {
+      var prefix = ""
+      if (!free) {
+        prefix = "pw-"
+      }
+      var url = "https://ssl-thieme.met.vgwort.de/na/" + prefix + "vgzm.437450-" + encodeURIComponent(articleDoi);
+      var html = "<img src=\"" + url + "\" width=\"1\" height=\"1\"/>";
+      document.getElementById("div_vgwpixel").innerHTML = html;
+    }
+
+</script>
+<script type="text/javascript">
+(function(a){(jQuery.browser=jQuery.browser||{}).mobile=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))})(navigator.userAgent||navigator.vendor||window.opera);
+
+  
+  if(typeof jsWasMobileFlagAlreadyAsked !== "undefined" && !jsWasMobileFlagAlreadyAsked){
+    if ($.browser.mobile && !navigator.userAgent.match(/iPad/i)) {
+      //$.cookie("thiememobile", "mobile", { path: jsContextPath });
+      var uri = "/products/ejournals/abstract/10.1055/a-2496-5240";
+      window.location = uri + '?device=mobile&innerWidth=' + window.innerWidth + '&offsetWidth=' + document.body.offsetWidth + window.location.hash;
+      //window.location = jsContextPath+'/?device=mobile&innerWidth=' + window.innerWidth + '&offsetWidth=' + document.body.offsetWidth;
+    }
+  }
+</script>
+
+<script type="text/javascript">
+
+  function loadAccess() {
+    // Artikel auf der Seite abholen
+    var articlesToCheck = document.getElementsByName("ai");
+
+    if (articlesToCheck.length == 0) {
+      return;
+    }
+
+    loadAccessFromList(articlesToCheck)
+  }
+
+  function loadAccessFromList(articlesToCheck) {
+    if (articlesToCheck.length == 0) {
+      return;
+    }
+
+    var dois = [];
+    for (var i = 0; i < articlesToCheck.length; i++) {
+      dois[i] = articlesToCheck[i].value;
+    }
+
+    //Query String Array zusammenbauen
+    var query = [];
+    var j = -1;
+    for (var i = 0; i < dois.length; i++) {
+      if (i % 20 == 0) {
+        j++;
+        query[j] = "";
+      }
+      if (i == 0) {
+        query[j] += 'doi=';
+      } else {
+        query[j] += '&doi=';
+      }
+      query[j] += dois[i];
+    }
+
+    // URL zum Abholen der Ausgaben zusammenbauen
+    var url = jsContextPath + '/json/articles';
+
+    // URL abschicken
+    var http = null;
+    http = sendQuery(http, url, query, -1, true);
+
+  }
+
+  function sendQuery(xmlHttp, url, query, count, isNewRequest) {
+
+      if (isNewRequest) {
+
+        count++;
+
+        if (!xmlHttp) {
+          // Mozilla, Opera, Safari sowie Internet Explorer (ab v7)
+          if (typeof XMLHttpRequest != 'undefined') {
+            xmlHttp = new XMLHttpRequest();
+          }
+
+          if (!xmlHttp) {
+            // Internet Explorer 6 und älter
+            try {
+              xmlHttp  = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch(e) {
+              try {
+                xmlHttp  = new ActiveXObject("Microsoft.XMLHTTP");
+              } catch(e) {
+                xmlHttp  = null;
+              }
+            }
+          }
+        }
+
+        if (xmlHttp) {
+          xmlHttp.open('POST', url, true);
+
+          //Send the proper header information along with the request
+          xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+          xmlHttp.onreadystatechange = function () {
+          if (xmlHttp.readyState == 4) {
+            var articles = eval('(' + xmlHttp.responseText + ')');
+            for (var i = 0; i < articles.length; i++) {
+              var article = articles[i];
+              if (article['authorized']) {
+                // Access Indikatoren setzen
+                for (var j = 0; j < article['div'].length; j++) {
+                  var div = article['div'][j];
+                  var attr = 'ul[data-doi="' + div + '"]'
+                  if ($(attr) != null) {
+                    $(attr).addClass("splitButton accessOptions open");
+                  }
+                }
+              } else {
+                // SFX Logo ausblenden
+                var sfx = "sfx" + article['doi'];
+                var sfxlink = "sfxlink" + article['doi'];
+                // in article-lists the wrapper puts the sfx data on the page and id sfxImageUrl is not available, in article view check also if sfx data is available before fading in
+                if (document.getElementById(sfx) != null && (document.getElementById("sfxImageUrl") == null) || (document.getElementById("sfxImageUrl") != null && document.getElementById("sfxImageUrl").getAttribute("src") != null && document.getElementById("sfxImageUrl").getAttribute("src").length > 0)) {
+                  document.getElementById(sfx).style.display = "inline";
+                  if (document.getElementById(sfxlink) != null && document.getElementById(sfxlink).getAttribute('data-href') != null) {
+                    document.getElementById(sfxlink).setAttribute("href", document.getElementById(sfxlink).getAttribute('data-href'));
+                    document.getElementById(sfxlink).removeAttribute("data-href");
+                  }
+                }
+              }
+            }
+          }
+        };
+
+        xmlHttp.send(query[count]);
+        }
+
+      }
+
+      // Antwort des aktuellen Requests abwarten bevor der nächste gestartet wird
+      if (xmlHttp && xmlHttp.readyState != 4) {
+        window.setTimeout(function () { sendQuery(xmlHttp, url, query, count, false) }, 1000);
+      // neue Anfrage starten falls nch weitere Elemente vorhanden sind
+      } else if (query.length - count > 1){
+        window.setTimeout(function () { sendQuery(xmlHttp, url, query, count++, true) }, 1000);
+      }
+
+    return xmlHttp;
+  }
+
+
+</script>
+<script type="text/javascript">
+
+function RightslinkPopUp(publication, title, publicationDate, author, copyright, contentID, startPage, endPage, volumeNum, issueNum, license) {
+    
+    var url = "https://s100.copyright.com/AppDispatchServlet"; 
+    var location = url 
+      + "?publisherName=georgthieme"
+      + "&publication=" + encodeURI (publication)
+      + "&title=" + encodeURI (title) 
+      + "&publicationDate=" + encodeURI (publicationDate) 
+      + "&author=" + encodeURI (author)
+      + "&copyright=" + encodeURI (copyright)
+      + "&contentID=" + encodeURI (contentID)
+      + "&startPage=" + encodeURI (startPage)
+      + "&endPage=" + encodeURI (endPage)
+      + "&volumeNum=" + encodeURI (volumeNum)
+      + "&issueNum=" + encodeURI (issueNum)
+      + "&orderSource="
+      + "&orderBeanReset=true";
+    if (license.length > 0) {
+        location += "&oa=" + encodeURI (license)
+    }
+
+      PopUp = window.open(location, 'Rightslink', 'location=no,toolbar=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=650,height=550');
+  }
+
+  function RightslinkPopUpForBooks(publicationDate, author, contentId, bookTitle, title, isbn, sp, rpt) {
+    
+    var url = "https://s100.copyright.com/AppDispatchServlet"; 
+    var location = url 
+      + "?publisherName=georgthiemebks"
+      + "&publicationDate=" + encodeURI (publicationDate)
+      + "&author=" + encodeURI (author)
+      + "&contentid=" + encodeURI (contentId)
+      + "&bookTitle=" + encodeURI (bookTitle) 
+      + "&title=" + encodeURI (title)
+      + "&ISBN=" + encodeURI (isbn)
+      + "&sp=" + encodeURI (sp)
+      + "&rpt=" + encodeURI (rpt)
+      + "&publication=BOOK"
+      + "&copyright="
+      + "&orderSource="
+      + "&orderBeanReset=true"
+      
+      PopUp = window.open(location, 'Rightslink', 'location=no,toolbar=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=650,height=550');
+  }
+
+</script>
+
+
+<script type="text/javascript">
+  // holt sich das json Objekt und fuellt die Ausgaben-Dropdownbox
+  function loadIssues(shortname, year) {
+
+    // Volume-Anzeige in Abhängigkeit zur Zeitschrift anzeigen
+    var isDisplayVolume = JSON.parse(document.toc.isDisplayVolume.value);
+
+    // URL zum Abholen der Ausgaben zusammenbauen
+    var url = jsContextPath + '/json/issues?shortname=' + shortname + '&year='
+        + year;
+
+    // Request vorbereiten
+    var xmlHttp = null;
+
+    // Mozilla, Opera, Safari sowie Internet Explorer (ab v7)
+    if (typeof XMLHttpRequest != 'undefined') {
+      xmlHttp = new XMLHttpRequest();
+    }
+
+    if (!xmlHttp) {
+      // Internet Explorer 6 und älter
+      try {
+        xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+      } catch (e) {
+        try {
+          xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        } catch (e) {
+          xmlHttp = null;
+        }
+      }
+    }
+
+    // URL abschicken und Dropdownbox fuellen
+    if (xmlHttp) {
+      xmlHttp.open('GET', url, true);
+      xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4) {
+          var issues = eval('(' + xmlHttp.responseText + ')');
+          if (isDisplayVolume == true) {
+            if (issues.length > 1) {
+              var showVolume = false;
+              var comparedIssue = null;
+              var ids = [];
+              for (var i = 0; i < issues.length; i++) {
+                if (issues[i]['number'].indexOf('S ') > -1 || issues[i]['number'].toLowerCase() == issues[i]['number'].toUpperCase()) {
+                  if (comparedIssue == null) {
+                    comparedIssue = issues[i];
+                  }
+                  ids.push(i);
+                }
+              }
+              for (var i = 0; i < ids.length; i++) {
+                if (issues[i]['volume'] != comparedIssue['volume']) {
+                  showVolume = true;
+                  break;
+                }
+              }
+            }
+          }
+          var html = "";
+          for (var i = 0; i < issues.length; i++) {
+
+            html += "<li><a href='"+jsContextPath+"/ejournals/issue/" + issues[i]['doi'] + "'>";
+            if (showVolume == true && issues[i]['volume'] != null && issues[i]['volume'].length > 0) {
+              html += "Vol " + issues[i]['volume'] + " (";
+            }
+            html += issues[i]['number'];
+            if (showVolume == true && issues[i]['volume'] != null && issues[i]['volume'].length > 0) {
+              html += ")";
+            }
+            html +=  ": ";
+            if(issues[i]['pages'] != null) {
+                html += issues[i]['pages'];
+              }
+            html += "</a></li>" ;
+          }
+          $('#issue').html(html);
+          $('#currentYear').html(year);
+        }
+      };
+
+      xmlHttp.send(null);
+    }
+  }
+
+  // laedt beim Wechsel des Jahres die Dropdownboxen
+  function getIssues(year) {
+    // Ausgabenliste holen
+    loadIssues(document.toc.shortname.value, year);
+  }
+
+  // laedt beim Refresh der Seite die Ausgabenliste
+  function setIssues(year) {
+
+    // falls nur eFirst vorhanden gar keine Ausgaben laden
+    if (year > 0) {
+      // Ausgabenliste holen
+      loadIssues(document.toc.shortname.value, year);
+    }else{
+
+
+    }
+  }
+</script>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        if ($("#crossrefcites").length > 0) {
+            var doi = $("#crossrefcites").data("doi");
+            var ajaxUrl = jsContextPath + "/json/getCrossrefCites?doi=" + doi;
+            $.ajax({
+                url: ajaxUrl,
+                type: "GET",
+                dataType: "html",
+                success: function (data) {
+                    $('#crossrefcites').html(data);
+                },
+                error: function (xhr, status) {
+                    console.log("Cannot retrieve crossref cites for the doi " + doi + ".");
+                },
+                complete: function (xhr, status) {
+                }
+            });
+        }
+    });
+
+    $('#crossrefcites').click(function(e){
+        var doi = $("#crossrefcites").data("doi");
+
+        var citesHTMLContent = "<div style=\"font-family: sans-serif; font-size: 12px; line-height: 140%\">";
+        citesHTMLContent += document.getElementById('crossrefCitesDetails').innerHTML;
+        citesHTMLContent += "</div>";
+
+        var crossrefCitesWindowHeight = Math.floor($(window).height() / 2);
+        var crossrefCitesWindowWidth = Math.floor($(window).width() / 2);
+        var crossrefCitesWindowTop = Math.floor($(window).height() / 4);
+        var crossrefCitesWindowLeft = Math.floor($(window).width() / 4);
+        var crossrefCitesSize = "width=";
+        crossrefCitesSize += crossrefCitesWindowWidth;
+        crossrefCitesSize += ",height=";
+        crossrefCitesSize += crossrefCitesWindowHeight;
+        crossrefCitesSize += ",left=";
+        crossrefCitesSize += crossrefCitesWindowLeft;
+        crossrefCitesSize += ",top=";
+        crossrefCitesSize += crossrefCitesWindowTop;
+        crossrefCitesSize += ",scrollbars=1";
+
+        var crossrefCitesWindow = window.open("", "newWindow", crossrefCitesSize);
+        crossrefCitesWindow.focus();
+        crossrefCitesWindow.document.writeln();
+        crossrefCitesWindow.document.writeln(citesHTMLContent);
+        document.head.insertAdjacentHTML("afterbegin", "<style>body { font-size: 12px; line-height: 140%; font-family: sans-serif; color: #000; }");
+        crossrefCitesWindow.document.title = doi + " Crossref Cited-by";
+        crossrefCitesWindow.document.close();
+    });
+
+</script>
+<script type="text/javascript">
+    $(".zoomFunction, .imageFunction, .audioFunction, .videoFunction, .podcastFunction").click(function() {
+        var id = $(this).attr("data-id");
+        var caption = encodeURIComponent($(this).attr("data-caption"));
+        var doi = $(this).attr("data-doi");
+        var mediaType = "image";
+        if ($(this).attr('class').indexOf('podcastFunction') > -1) {
+            mediaType = "podcast";
+        } else if ($(this).attr('class').indexOf('audioFunction') > -1) {
+            mediaType = "audio";
+        } else if ($(this).attr('class').indexOf('videoFunction') > -1) {
+            mediaType = "video";
+        }
+        submitMediaEvent(mediaType, id, caption, doi);
+    });
+
+    function submitMediaEvent(mediaType, id, caption, doi) {
+    const url = '/products/json/submitMediaStatisticsEvent?mediaType=' + mediaType + '&id=' + id + '&caption=' + caption + '&doi=' + doi;
+        const request = $.ajax({
+            type : 'GET',
+            async : true,
+            cache: false,
+            url,
+            success : function(data) {
+            }
+        });
+    }
+
+    $(".linkFunction").click(function() {
+        var target = $(this).attr("data-target");
+        var id = $(this).attr("data-id");
+        var uri = encodeURIComponent($(this).attr("data-url"));
+        const url = '/products/json/submitLinkStatisticsEvent?target=' + target + '&id=' + id + '&url=' + uri;
+        const request = $.ajax({
+            type : 'GET',
+            async : true,
+            cache: false,
+            url,
+            success : function(data) {
+            }
+        });
+    });
+</script>
+
+
+
+  
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    
+      setIssues("2025");
+      loadAccess();
+      
+      var free = false;
+      if (false || true) {
+          free = true;
+      }
+      vgwPixelCall("10.1055-a-2496-5240", free);
+
+      initTabBar({
+        objID : 'articleTabs'
+      });
+      initTabBar({
+        open : 0,
+        objID : 'supmatTabs'
+      });
+
+      var sasLink =  $("#sasLink");
+      if (sasLink.length > 0) {
+        $("#sasLink").css('display', 'inline');
+      }
+      
+      if (false) {
+        var sfxServer =  $("#sfxServer");
+        var sfxImageUrl =  $("#sfxImageUrl");
+        if (sfxServer.length > 0 && sfxImageUrl.length > 0) {
+          sfxServer.attr('href', sfxServer.attr('data-href'));
+          sfxServer.removeAttr('data-href');
+          sfxServer.attr('href', "" + sfxServer.attr('href'));
+          sfxImageUrl.attr('src', "");
+        }
+      }
+      
+      $(function() {
+        $('.toggle-affiliation-infos').click(function(e) {
+            e.preventDefault();
+            $(this).parent('#authorlist').toggleClass('expanded');
+            console.log($(this).parent('.expanded').length);
+
+        });
+    });
+
+      // da bei den Autoren zum Auf/Zuklappen und Verlinkungen mehrere <div> enthalten sind
+      // werden vom Browser generierte "Leerraum" Passagen damit gelöscht
+      // 5.5.23: TC-2316: 5.5.23: vorerst wieder auskommentiert
+      /*$( "#authorlist" ).each(function( index ) {
+          var html = $(this).html().replace(/\s+/g, ' ').trim();
+          html = html.replaceAll('</div> <div ', '</div><div ');
+          $(this).html(html);
+      });*/
+
+    });
+</script>
+<!-- end article/jsAbstract.gsp -->
+
+
+      </div>
+      <!-- start general/_footer.gsp -->
+<footer>
+  <div id="pageEnd">
+    <a href="#top">Top of Page</a>
+  </div>
+  <div class="clearfix">
+    <div id="footerCenter" style="margin-left:40px">
+      &copy; <span id="currentYearCopyright"></span> Georg Thieme Verlag KG | 
+      
+      
+        <a href="https://thieme.com/impressum-gtv-en">Imprint</a> |
+        <a href="https://thieme.com/data-privacy-gtv-en">Privacy policy statement</a> |
+      
+      <a href="/products/" id="switchToMobile">Smartphone Version</a>
+      <br/>
+      <div style="padding-top: 10px">
+        Your Current IP Address: 49.43.130.52
+      </div>
+    </div>
+    <div id="footerRight"></div>
+  </div>
+</footer>
+<!-- end general/_footer.gsp -->
+
+      <!-- start general/_adSideBarPanel.gsp -->
+<div id="adSidebar">
+
+  
+    
+  
+  
+  
+    
+    
+      
+        
+        
+        
+        
+      
+      <script type="text/javascript">
+        window.TCFUtility.writeScript([
+          'https://adfarm1.adition.com/js?wp_id=568900&gdpr=${GDPR}&gdpr_consent=${GDPR_CONSENT_39}&prf[DOI]=10.1055-s-00000182&prf[UserLogin]=false&prf[IPLogin]=false&prf[MASTERKEY]=10.1055-s-00000182, false, false&prf[HWG]=false'
+        ]);
+      </script>
+      <script type="text/javascript">
+        window.TCFUtility.writeScript([
+          'https://adfarm1.adition.com/js?wp_id=543154&gdpr=${GDPR}&gdpr_consent=${GDPR_CONSENT_39}&prf[DOI]=10.1055-s-00000182&prf[UserLogin]=false&prf[IPLogin]=false&prf[MASTERKEY]=10.1055-s-00000182, false, false&prf[HWG]=false'
+        ]);
+      </script>
+      
+    
+  
+  
+</div>
+<!-- end general/_adSideBarPanel.gsp -->
+
+    </div>
+
+    <!-- start general/_jsVariables.gsp -->
+<div id="globalJsVariables" class="off"
+    data-js-context-path="/products"
+    data-js-ismobile="false"
+    data-js-wasmobileasked="false"
+    >
+</div>
+<!-- end general/_jsVariables.gsp -->
+
+
+    
+    
+
+    
+      
+        <script defer src='//js.trendmd.com/trendmd.min.js' data-trendmdconfig='{"journal_id":"71214","element":"#trendmd-suggestions"}'></script>
+      
+    
+
+    
+    
+
+
+    
+      <!-- „OneTrust Cookie-Einstellungen“ – Schaltfläche – Anfang -->
+      <button id="ot-sdk-btn" class="ot-sdk-show-settings"></button>
+      <!-- „OneTrust Cookie-Einstellungen“ – Schaltfläche – Ende -->
+    
+
+  </body>
+</html>
